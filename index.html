@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
             min-height: 100vh;
             color: #333;
         }
@@ -242,11 +242,6 @@
             <h1>🌍 Globalny Biuletyn Wiadomości</h1>
             <div class="date" id="currentDate"></div>
             <button class="refresh-btn" onclick="refreshNews()">🔄 Odśwież wiadomości</button>
-            
-            <!-- Status API -->
-            <div style="margin-top: 15px; padding: 10px; background: rgba(46, 204, 113, 0.2); border-radius: 10px; font-size: 0.9rem;">
-                <span style="color: #2ecc71;">✅ API skonfigurowane</span> - prawdziwe wiadomości i ceny crypto dostępne!
-            </div>
         </div>
 
         <div id="newsContent">
@@ -345,6 +340,11 @@
                                 <div class="crypto-symbol">ETH</div>
                                 <div class="crypto-price" id="eth-price">$3,765</div>
                                 <div class="crypto-change positive">+4.3%</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="crypto-symbol">SOL</div>
+                                <div class="crypto-price" id="sol-price">$218</div>
+                                <div class="crypto-change positive">+6.2%</div>
                             </div>
                             <div class="price-item">
                                 <div class="crypto-symbol">BNB</div>
@@ -506,27 +506,27 @@
                 <div class="news-section sports">
                     <h2 class="section-title">
                         <span class="icon">⚽</span>
-                        Sport
+                        Sport Polski
                     </h2>
                     <div class="news-item">
-                        <div class="news-title">Katie Ledecky wygrywa 1500m stylem dowolnym</div>
-                        <div class="news-summary">Katie Ledecky zdobyła złoto na 1500m stylem dowolnym na Mistrzostwach Świata w Pływaniu, to jej 22. tytuł mistrzyni świata.</div>
-                        <div class="news-source">CNN Sports</div>
+                        <div class="news-title">Robert Lewandowski kontrowersje w reprezentacji</div>
+                        <div class="news-summary">Lewandowski odmawia gry w reprezentacji Polski po skandalu z selekcjonerem. Federacja rozważa zmianę trenera po ultimatum kapitana.</div>
+                        <div class="news-source">Dailysports</div>
                     </div>
                     <div class="news-item">
-                        <div class="news-title">Venus Williams otrzymuje dziką kartę do US Open</div>
-                        <div class="news-summary">Venus Williams otrzymała dziką kartę z Reilly Opelką do gry w mikście podczas US Open, powracając na korty po dłuższej przerwie.</div>
-                        <div class="news-source">CNN Sports</div>
+                        <div class="news-title">Iga Świątek w finale French Open</div>
+                        <div class="news-summary">Polka pokonała Coco Gauff 6-2, 6-4 i awansowała do finału Roland Garros. To kolejny sukces najlepszej tenisistki świata.</div>
+                        <div class="news-source">Poland 24</div>
                     </div>
                     <div class="news-item">
-                        <div class="news-title">Śmierć legendy baseballu Ryne Sandberga</div>
-                        <div class="news-summary">Zmarł Ryne Sandberg, członek Galerii Sław i legenda Chicago Cubs, w wieku 65 lat. Baseball stracił jedną ze swoich największych gwiazd.</div>
-                        <div class="news-source">CNN Sports</div>
+                        <div class="news-title">Polska reprezentacja siatkówki na szczycie rankingu</div>
+                        <div class="news-summary">Biało-czerwoni utrzymują pierwsze miejsce w światowym rankingu. Polska to aktualny mistrz świata w siatkówce mężczyzn.</div>
+                        <div class="news-source">Wikipedia Sports</div>
                     </div>
                     <div class="news-item">
-                        <div class="news-title">Ukraiński pływak mistrzem świata</div>
-                        <div class="news-summary">Pływak, który uciekł ze swojego rodzinnego miasta po rosyjskiej inwazji na Ukrainę, nigdy nie myślał, że zostanie mistrzem świata.</div>
-                        <div class="news-source">CNN Sports</div>
+                        <div class="news-title">Hubert Hurkacz przegrał z Fils w turnieju</div>
+                        <div class="news-summary">Polski tenisista został pokonany przez Francuza Arthura Filsa w rozczarowującym występie przed Euro 2024.</div>
+                        <div class="news-source">Poland 24</div>
                     </div>
                 </div>
             </div>
@@ -609,11 +609,12 @@
         // Pobieranie cen kryptowalut z prawdziwego API
         async function fetchRealCryptoPrices() {
             try {
-                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true');
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true');
                 const data = await response.json();
                 
                 updateCryptoPriceDisplay('btc-price', data.bitcoin?.usd, data.bitcoin?.usd_24h_change);
                 updateCryptoPriceDisplay('eth-price', data.ethereum?.usd, data.ethereum?.usd_24h_change);
+                updateCryptoPriceDisplay('sol-price', data.solana?.usd, data.solana?.usd_24h_change);
                 updateCryptoPriceDisplay('bnb-price', data.binancecoin?.usd, data.binancecoin?.usd_24h_change);
                 updateCryptoPriceDisplay('xrp-price', data.ripple?.usd, data.ripple?.usd_24h_change);
                 
