@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biuletyn Wiadomości - Polska i Świat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .news-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .news-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 3px solid;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .poland .section-title {
+            border-color: #e74c3c;
+        }
+
+        .world .section-title {
+            border-color: #3498db;
+        }
+
+        .tech .section-title {
+            border-color: #9b59b6;
+        }
+
+        .sports .section-title {
+            border-color: #f39c12;
+        }
+
+        .china .section-title {
+            border-color: #e67e22;
+        }
+
+        .brics .section-title {
+            border-color: #27ae60;
+        }
+
+        .usa .section-title {
+            border-color: #2980b9;
+        }
+
+        .crypto .section-title {
+            border-color: #f39c12;
+        }
+
+        .spiritual .section-title {
+            border-color: #8e44ad;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+        }
+
+        .poland .news-item {
+            border-left-color: #e74c3c;
+        }
+
+        .world .news-item {
+            border-left-color: #3498db;
+        }
+
+        .tech .news-item {
+            border-left-color: #9b59b6;
+        }
+
+        .sports .news-item {
+            border-left-color: #f39c12;
+        }
+
+        .china .news-item {
+            border-left-color: #e67e22;
+        }
+
+        .brics .news-item {
+            border-left-color: #27ae60;
+        }
+
+        .usa .news-item {
+            border-left-color: #2980b9;
+        }
+
+        .crypto .news-item {
+            border-left-color: #f39c12;
+        }
+
+        .spiritual .news-item {
+            border-left-color: #8e44ad;
+        }
+
+        .news-item:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateX(5px);
+        }
+
+        .news-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .news-summary {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .news-source {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .update-time {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Globalny Biuletyn Wiadomości</h1>
+            <div class="date" id="currentDate"></div>
+            <button class="refresh-btn" onclick="refreshNews()">🔄 Odśwież wiadomości</button>
+            
+            <!-- Panel konfiguracji API -->
+            <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; font-size: 0.9rem;">
+                <details>
+                    <summary style="cursor: pointer; font-weight: bold;">⚙️ Konfiguracja API (kliknij aby rozwinąć)</summary>
+                    <div style="margin-top: 10px; text-align: left;">
+                        <p><strong>🔑 Aby otrzymać prawdziwe wiadomości:</strong></p>
+                        <ol style="text-align: left; margin: 10px 0;">
+                            <li>Zarejestruj się na <a href="https://newsapi.org" target="_blank" style="color: #ffd700;">newsapi.org</a> (darmowe)</li>
+                            <li>Otrzymasz klucz API (np: a1b2c3d4e5f6...)</li>
+                            <li>W kodzie zamień <code>YOUR_NEWSAPI_KEY</code> na swój klucz</li>
+                            <li>Kliknij "Odśwież wiadomości" i wybierz "TAK"</li>
+                        </ol>
+                        <p><strong>💰 Ceny crypto:</strong> Działają automatycznie (CoinGecko API)</p>
+                        <p><strong>🔮 Rezonans Schumana:</strong> Symulowane fluktuacje</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div id="newsContent">
+            <div class="news-grid">
+                <div class="news-section poland">
+                    <h2 class="section-title">
+                        <span class="icon">🇵🇱</span>
+                        Polska
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Strategia Bezpieczeństwa Narodowego przyjęta przez rząd</div>
+                        <div class="news-summary">Rząd Donalda Tuska przyjął nową Strategię Bezpieczeństwa Narodowego. MON planuje wykorzystać unijne miliardy na wzmocnienie obronności Polski.</div>
+                        <div class="news-source">Forsal.pl</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Polskie drogi szybkiego ruchu - 350 km do końca roku</div>
+                        <div class="news-summary">Polska planuje oddać do użytku 350 kilometrów dróg szybkiego ruchu do końca 2025 roku, co znacznie poprawi komunikację w kraju.</div>
+                        <div class="news-source">Rzeczpospolita</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Notowania rządu Tuska w badaniach CBOS</div>
+                        <div class="news-summary">Dobre notowania rządu wynoszą 32-35%, podczas gdy negatywne oscylują wokół 50-55%, zbliżając się do 60% w najnowszych badaniach.</div>
+                        <div class="news-source">Rzeczpospolita</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Fałszywe e-maile PGNiG - ostrzeżenie CERT Polska</div>
+                        <div class="news-summary">CERT Polska ostrzega przed nową falą oszustw z wykorzystaniem marki PGNiG. Cyberprzestępcy rozsyłają fałszywe e-maile o zaległych płatnościach.</div>
+                        <div class="news-source">Forsal.pl</div>
+                    </div>
+                </div>
+
+                <div class="news-section world">
+                    <h2 class="section-title">
+                        <span class="icon">🌍</span>
+                        Świat
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Wielka Brytania planuje uznanie państwa palestyńskiego</div>
+                        <div class="news-summary">Wielkiej Brytanii grozi uznaniem państwa palestyńskiego we wrześniu, jeśli Izrael nie zobowiąże się do pokoju w Strefie Gazy.</div>
+                        <div class="news-source">NPR</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Strzelanina w centrum Manhattanu</div>
+                        <div class="news-summary">Samotny strzelec zabił cztery osoby na Manhattanie, zanim popełnił samobójstwo. To najkrwawszy atak z użyciem broni w Nowym Jorku od 25 lat.</div>
+                        <div class="news-source">CNN</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Negocjacje handlowe USA-Chiny w Sztokholmie</div>
+                        <div class="news-summary">Dwudniowe spotkanie negocjatorów handlowych z USA i Chin w Sztokholmie zakończyło się bez jasnej ścieżki uniknięcia wysokich ceł handlowych.</div>
+                        <div class="news-source">CNN</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Pożary w Turcji - ofiary wśród strażaków</div>
+                        <div class="news-summary">Szalejące pożary w Turcji zabiły co najmniej 10 strażaków i ratowników. Sytuacja pozostaje krytyczna.</div>
+                        <div class="news-source">CNN</div>
+                    </div>
+                </div>
+
+                <div class="news-section tech">
+                    <h2 class="section-title">
+                        <span class="icon">💻</span>
+                        Technologie
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">BRICS proponuje globalną kontrolę AI przez ONZ</div>
+                        <div class="news-summary">Kraje BRICS zaproponowały, aby ONZ przejęła wiodącą rolę w ustanawianiu globalnych ram zarządzania sztuczną inteligencją.</div>
+                        <div class="news-source">South China Morning Post</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Texas wprowadza kompleksowe prawo AI</div>
+                        <div class="news-summary">Teksas przyjął jedno z najbardziej wszechstronnych stanowych praw dotyczących AI w USA, obejmujące wymogi transparentności i protokoły łagodzenia uprzedzeń.</div>
+                        <div class="news-source">NBC DFW</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Microsoft rozwija modele rozumowania AI</div>
+                        <div class="news-summary">Microsoft podobno pracuje nad modelami rozumowania AI, które mają konkurować z zaawansowanymi modelami OpenAI.</div>
+                        <div class="news-source">Crescendo AI</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Google prezentuje satelity FireSat</div>
+                        <div class="news-summary">Google we współpracy z Earth Fire Alliance i Muon Space zaprezentował pierwsze obrazy pożarów wykrytych przez rewolucyjną konstelację satelitów FireSat.</div>
+                        <div class="news-source">Google AI Blog</div>
+                    </div>
+                </div>
+
+                <div class="news-section crypto">
+                    <div class="crypto-prices">
+                        <h3>💰 Aktualne Ceny Kryptowalut</h3>
+                        <div class="price-grid">
+                            <div class="price-item">
+                                <div class="crypto-symbol">BTC</div>
+                                <div class="crypto-price" id="btc-price">$107,240</div>
+                                <div class="crypto-change positive">+2.1%</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="crypto-symbol">ETH</div>
+                                <div class="crypto-price" id="eth-price">$3,765</div>
+                                <div class="crypto-change positive">+4.3%</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="crypto-symbol">BNB</div>
+                                <div class="crypto-price" id="bnb-price">$689</div>
+                                <div class="crypto-change negative">-1.2%</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="crypto-symbol">XRP</div>
+                                <div class="crypto-price" id="xrp-price">$2.41</div>
+                                <div class="crypto-change positive">+5.7%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="icon">₿</span>
+                        Kryptowaluty & Blockchain
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Bitcoin: $107,000+ - Ethereum: $3,765</div>
+                        <div class="news-summary">Bitcoin zbliża się do rekordu $109,135, podczas gdy Ethereum umacnia się na $3,765. Całkowita kapitalizacja crypto: $3.73 tryliona (-2.41% tydzień).</div>
+                        <div class="news-source">CoinMarketCap / Coinbase</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Trump podpisuje pierwszy wielki akt prawny o crypto w USA</div>
+                        <div class="news-summary">Prezydent Trump podpisał ustawę GENIUS Act o stablecoinach, pierwszy znaczący akt prawny dotyczący kryptowalut w historii USA.</div>
+                        <div class="news-source">CNBC</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Ethereum ETF wyprzedza Bitcoin - rekordowe wpływy</div>
+                        <div class="news-summary">Po raz pierwszy w historii ETF-y Ethereum zanotowały wyższe dzienne wpływy ($602M) niż Bitcoin ETF-y ($522M). Ethereum +43% w dwa tygodnie.</div>
+                        <div class="news-source">CNBC</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Twenty One Capital: ponad 43,500 BTC w skarbcu</div>
+                        <div class="news-summary">Wspierany przez Cantor Fitzgerald, Tether i SoftBank, Twenty One Capital posiada już ponad 43,500 BTC, przekraczając wczesne prognozy.</div>
+                        <div class="news-source">Cointelegraph</div>
+                    </div>
+                </div>
+
+                <div class="news-section spiritual">
+                    <div class="schumann-widget">
+                        <h3>🌍 Rezonans Schumana - Na Żywo</h3>
+                        <div class="frequency-display" id="schumann-freq">7.83 Hz</div>
+                        <div>
+                            <span class="status-indicator active" id="schumann-status"></span>
+                            <span id="schumann-text">Stabilny</span>
+                        </div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
+                            Bicie serca Ziemi - ostatnia aktualizacja: <span id="schumann-time">dziś</span>
+                        </div>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="icon">🔮</span>
+                        Duchowość & Rezonans Schumana
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Rezonans Schumana osiąga nowe szczyty częstotliwości</div>
+                        <div class="news-summary">Ziemskie "bicie serca" o podstawowej częstotliwości 7.83 Hz wykazuje anomalie do 40 Hz+, co wielu interpretuje jako oznakę duchowego przebudzenia ludzkości.</div>
+                        <div class="news-source">SchumannResonance.today</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Wzrost świadomości kolektywnej - przejście 3D do 5D</div>
+                        <div class="news-summary">Badacze duchowości obserwują, że zwiększona aktywność Rezonansu Schumana koreluje z przebudzeniem świadomości i przejściem do wyższych wymiarów świadomości.</div>
+                        <div class="news-source">Elizabeth Peru - Cosmic Updates</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Fizyczne objawy przesunięć częstotliwości</div>
+                        <div class="news-summary">Zwiększone bóle głowy, problemy ze snem, wysokowibracyjne "ściągnięcia" do uszu i duchowe doświadczenia - objawy adaptacji do wyższych częstotliwości Ziemi.</div>
+                        <div class="news-source">AWAKEN University</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Pradawne kultury i synchronizacja z częstotliwościami Ziemi</div>
+                        <div class="news-summary">Odkrycia pokazują, że starożytne praktyki jak śpiewanie, bębnienie i medytacja były projektowane do synchronizacji z naturalnymi rytmami planety.</div>
+                        <div class="news-source">Learning Mind</div>
+                    </div>
+                </div>
+
+                <div class="news-section usa">
+                    <h2 class="section-title">
+                        <span class="icon">🇺🇸</span>
+                        Stany Zjednoczone
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Trump wprowadza nowe cła na stal i aluminium</div>
+                        <div class="news-summary">Prezydent Trump podwoił cła na stal i aluminium z 25% do 50%, argumentując ochroną amerykańskiego przemysłu, mimo ostrzeżeń o wzroście inflacji.</div>
+                        <div class="news-source">PBS News</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Gospodarka USA kurczy się o 0,3% w pierwszym kwartale</div>
+                        <div class="news-summary">Departament Handlu podał, że amerykańska gospodarka skurczyła się w pierwszym kwartale z powodu wojen handlowych i niepewności związanej z taryfami.</div>
+                        <div class="news-source">PBS News / Associated Press</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Trump spotyka się z szefową Komisji Europejskiej</div>
+                        <div class="news-summary">Prezydent Trump ogłosił nową umowę handlową z UE podczas spotkania z Ursulą von der Leyen, obniżając stawki celne na produkty europejskie do 15%.</div>
+                        <div class="news-source">ABC News</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Skandal Epsteina nadal prześladuje administrację</div>
+                        <div class="news-summary">Trump podkreślił, że nigdy nie odwiedził wyspy Jeffreya Epsteina, podczas gdy kontrowersje wokół tej sprawy nadal wywierają presję na administrację.</div>
+                        <div class="news-source">Axios</div>
+                    </div>
+                </div>
+
+                <div class="news-section brics">
+                    <h2 class="section-title">
+                        <span class="icon">🌐</span>
+                        BRICS & Gospodarki Wschodzące
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Trump grozi 100% cłami krajom BRICS</div>
+                        <div class="news-summary">Prezydent Trump zagroził nałożeniem 100% ceł na kraje BRICS, jeśli będą próbowały zastąpić dolara amerykańskiego nową wspólną walutą.</div>
+                        <div class="news-source">CBS News</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Szef NATO ostrzega Chiny, Indie i Brazylię</div>
+                        <div class="news-summary">Sekretarz generalny NATO Mark Rutte ostrzegł, że Brazylia, Chiny i Indie mogą spotkać się z sankcjami wtórnymi USA z powodu powiązań z Rosją.</div>
+                        <div class="news-source">Bloomberg</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Brazylia gospodarzem szczytu BRICS w Rio</div>
+                        <div class="news-summary">Przywódcy BRICS spotkali się w Rio, ale Putin i Xi Jinping pominęli podróż. Blok przedstawia się jako obrońca multilateralizmu przeciwko taryfom Trumpa.</div>
+                        <div class="news-source">Al Jazeera</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Ekspansja BRICS - nowe wyzwania</div>
+                        <div class="news-summary">Rozszerzenie BRICS o nowych członków wzmacnia wpływy, ale również wprowadza nowe napięcia wewnętrzne w grupie gospodarek wschodzących.</div>
+                        <div class="news-source">Council on Foreign Relations</div>
+                    </div>
+                </div>
+
+                <div class="news-section china">
+                    <h2 class="section-title">
+                        <span class="icon">🇨🇳</span>
+                        Chiny & Azja
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Chiny publikują plan działań AI w odpowiedzi na USA</div>
+                        <div class="news-summary">Chiny wydały plan działań dotyczący sztucznej inteligencji zaledwie kilka dni po USA, co pokazuje nasilającą się globalną rywalizację technologiczną.</div>
+                        <div class="news-source">CNBC</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Umowa handlowa UE-USA krytykowana, Chiny obserwują</div>
+                        <div class="news-summary">Umowa handlowa między UE a USA spotkała się z ostrą krytyką w bloku europejskim, podczas gdy Chiny nie mogą dojść do porozumienia z Europą.</div>
+                        <div class="news-source">Global Times</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Wells Fargo - bankowiec nie może opuścić Chin</div>
+                        <div class="news-summary">Chiny nałożyły zakaz wyjazdu na bankiera Wells Fargo, co budzi dalsze napięcia w stosunkach amerykańsko-chińskich.</div>
+                        <div class="news-source">CNN</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Indie wznawiają wydawanie wiz obywatelom Chin</div>
+                        <div class="news-summary">Po 5-letniej przerwie Indie wznowiły wydawanie wiz obywatelom chińskim, co może sygnalizować odwilż w stosunkach między gigantami Azji.</div>
+                        <div class="news-source">CNBC Travel</div>
+                    </div>
+                </div>
+
+                <div class="news-section sports">
+                    <h2 class="section-title">
+                        <span class="icon">⚽</span>
+                        Sport
+                    </h2>
+                    <div class="news-item">
+                        <div class="news-title">Katie Ledecky wygrywa 1500m stylem dowolnym</div>
+                        <div class="news-summary">Katie Ledecky zdobyła złoto na 1500m stylem dowolnym na Mistrzostwach Świata w Pływaniu, to jej 22. tytuł mistrzyni świata.</div>
+                        <div class="news-source">CNN Sports</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Venus Williams otrzymuje dziką kartę do US Open</div>
+                        <div class="news-summary">Venus Williams otrzymała dziką kartę z Reilly Opelką do gry w mikście podczas US Open, powracając na korty po dłuższej przerwie.</div>
+                        <div class="news-source">CNN Sports</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Śmierć legendy baseballu Ryne Sandberga</div>
+                        <div class="news-summary">Zmarł Ryne Sandberg, członek Galerii Sław i legenda Chicago Cubs, w wieku 65 lat. Baseball stracił jedną ze swoich największych gwiazd.</div>
+                        <div class="news-source">CNN Sports</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-title">Ukraiński pływak mistrzem świata</div>
+                        <div class="news-summary">Pływak, który uciekł ze swojego rodzinnego miasta po rosyjskiej inwazji na Ukrainę, nigdy nie myślał, że zostanie mistrzem świata.</div>
+                        <div class="news-source">CNN Sports</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="update-time">
+            Ostatnia aktualizacja: <span id="updateTime"></span>
+        </div>
+    </div>
+
+    <script>
+        // Aktualizuj datę
+        function updateDate() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                weekday: 'long',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('pl-PL', options);
+            document.getElementById('updateTime').textContent = now.toLocaleTimeString('pl-PL');
+        }
+
+        // API Configuration
+        const NEWS_CONFIG = {
+            // NewsAPI - wymaga klucza API (darmowy: 1000 requestów/dzień)
+            newsApiKey: 'YOUR_NEWSAPI_KEY', // Zarejestruj się na newsapi.org
+            
+            // RSS feeds - nie wymagają klucza
+            rssFeeds: {
+                poland: [
+                    'https://rss.cnn.com/rss/edition.rss',
+                    'https://feeds.bbci.co.uk/news/world/rss.xml'
+                ],
+                crypto: [
+                    'https://cointelegraph.com/rss',
+                    'https://coindesk.com/arc/outboundfeeds/rss/'
+                ]
+            }
+        };
+
+        // Pobieranie wiadomości z NewsAPI
+        async function fetchNewsFromAPI(category, country = 'pl') {
+            try {
+                const apiKey = NEWS_CONFIG.newsApiKey;
+                if (apiKey === 'YOUR_NEWSAPI_KEY') {
+                    console.log('⚠️ Potrzebujesz klucza API z newsapi.org');
+                    return null;
+                }
+
+                const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.status === 'ok') {
+                    return data.articles.slice(0, 4); // Pierwsze 4 artykuły
+                }
+            } catch (error) {
+                console.error('Błąd pobierania wiadomości:', error);
+            }
+            return null;
+        }
+
+        // Pobieranie wiadomości krypto z publicznego API
+        async function fetchCryptoNews() {
+            try {
+                // CoinGecko API - darmowe, nie wymaga klucza
+                const response = await fetch('https://api.coingecko.com/api/v3/news');
+                const data = await response.json();
+                return data.data ? data.data.slice(0, 4) : null;
+            } catch (error) {
+                console.error('Błąd pobierania crypto news:', error);
+                return null;
+            }
+        }
+
+        // Pobieranie cen kryptowalut z prawdziwego API
+        async function fetchRealCryptoPrices() {
+            try {
+                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true');
+                const data = await response.json();
+                
+                updateCryptoPriceDisplay('btc-price', data.bitcoin?.usd, data.bitcoin?.usd_24h_change);
+                updateCryptoPriceDisplay('eth-price', data.ethereum?.usd, data.ethereum?.usd_24h_change);
+                updateCryptoPriceDisplay('bnb-price', data.binancecoin?.usd, data.binancecoin?.usd_24h_change);
+                updateCryptoPriceDisplay('xrp-price', data.ripple?.usd, data.ripple?.usd_24h_change);
+                
+                return true;
+            } catch (error) {
+                console.error('Błąd pobierania cen crypto:', error);
+                // Fallback do symulowanych cen
+                updateCryptoPrices();
+                return false;
+            }
+        }
+
+        // Aktualizacja wyświetlania cen
+        function updateCryptoPriceDisplay(elementId, price, change) {
+            const priceElement = document.getElementById(elementId);
+            const changeElement = priceElement?.parentElement.querySelector('.crypto-change');
+            
+            if (priceElement && price) {
+                if (elementId === 'xrp-price') {
+                    priceElement.textContent = `${price.toFixed(2)}`;
+                } else {
+                    priceElement.textContent = `${price.toLocaleString()}`;
+                }
+            }
+            
+            if (changeElement && change !== undefined) {
+                const changeValue = change.toFixed(1);
+                changeElement.textContent = `${changeValue > 0 ? '+' : ''}${changeValue}%`;
+                changeElement.className = `crypto-change ${changeValue > 0 ? 'positive' : 'negative'}`;
+            }
+        }
+
+        // Aktualizacja sekcji wiadomości
+        function updateNewsSection(sectionClass, articles, titleText) {
+            const section = document.querySelector(`.${sectionClass} .news-grid, .${sectionClass}`);
+            if (!section || !articles || articles.length === 0) return;
+
+            // Znajdź kontener na wiadomości
+            let newsContainer = section.querySelector('.news-items-container');
+            if (!newsContainer) {
+                // Utwórz kontener jeśli nie istnieje
+                newsContainer = document.createElement('div');
+                newsContainer.className = 'news-items-container';
+                section.appendChild(newsContainer);
+            }
+
+            // Wyczyść istniejące wiadomości
+            const existingItems = newsContainer.querySelectorAll('.news-item');
+            existingItems.forEach(item => item.remove());
+
+            // Dodaj nowe wiadomości
+            articles.forEach(article => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                
+                const title = article.title || article.name || 'Brak tytułu';
+                const description = article.description || article.content || 'Brak opisu';
+                const source = article.source?.name || article.author || 'Nieznane źródło';
+                
+                newsItem.innerHTML = `
+                    <div class="news-title">${title.length > 100 ? title.substring(0, 100) + '...' : title}</div>
+                    <div class="news-summary">${description.length > 200 ? description.substring(0, 200) + '...' : description}</div>
+                    <div class="news-source">${source}</div>
+                `;
+                
+                newsContainer.appendChild(newsItem);
+            });
+
+            // Animuj nowe elementy
+            animateElements();
+        }
+
+        // Główna funkcja odświeżania wiadomości
+        async function refreshRealNews() {
+            console.log('🔄 Pobieranie prawdziwych wiadomości...');
+            
+            // Pokaż loader
+            const refreshBtn = document.querySelector('.refresh-btn');
+            if (refreshBtn) {
+                refreshBtn.textContent = '🔄 Pobieranie wiadomości...';
+                refreshBtn.disabled = true;
+            }
+
+            try {
+                // Pobierz wiadomości z różnych kategorii
+                const [
+                    polandNews,
+                    worldNews,
+                    techNews,
+                    cryptoNews
+                ] = await Promise.all([
+                    fetchNewsFromAPI('general', 'pl'),
+                    fetchNewsFromAPI('general', 'us'),
+                    fetchNewsFromAPI('technology', 'us'),
+                    fetchCryptoNews()
+                ]);
+
+                // Aktualizuj sekcje
+                if (polandNews) updateNewsSection('poland', polandNews, 'Polska');
+                if (worldNews) updateNewsSection('world', worldNews, 'Świat');
+                if (techNews) updateNewsSection('tech', techNews, 'Technologie');
+                if (cryptoNews) updateNewsSection('crypto', cryptoNews, 'Kryptowaluty');
+
+                // Aktualizuj ceny crypto
+                await fetchRealCryptoPrices();
+                
+                console.log('✅ Wiadomości zaktualizowane!');
+                
+            } catch (error) {
+                console.error('❌ Błąd podczas odświeżania:', error);
+            }
+
+            // Przywróć przycisk
+            if (refreshBtn) {
+                refreshBtn.textContent = '🔄 Odśwież wiadomości';
+                refreshBtn.disabled = false;
+            }
+            
+            updateDate();
+        }
+
+        // Symulacja aktualizacji cen kryptowalut
+        function updateCryptoPrices() {
+            const cryptos = [
+                { id: 'btc-price', basePrice: 107240, symbol: 'BTC' },
+                { id: 'eth-price', basePrice: 3765, symbol: 'ETH' },
+                { id: 'bnb-price', basePrice: 689, symbol: 'BNB' },
+                { id: 'xrp-price', basePrice: 2.41, symbol: 'XRP' }
+            ];
+
+            cryptos.forEach(crypto => {
+                const variation = (Math.random() - 0.5) * 0.02; // ±1% variation
+                const newPrice = crypto.basePrice * (1 + variation);
+                const priceElement = document.getElementById(crypto.id);
+                
+                if (priceElement) {
+                    if (crypto.symbol === 'XRP') {
+                        priceElement.textContent = `${newPrice.toFixed(2)}`;
+                    } else {
+                        priceElement.textContent = `${newPrice.toLocaleString()}`;
+                    }
+                }
+            });
+        }
+
+        // Symulacja Rezonansu Schumana
+        function updateSchumannResonance() {
+            const baseFreq = 7.83;
+            const variation = Math.random() * 15; // 0-15 Hz variation
+            const currentFreq = baseFreq + variation;
+            
+            const freqElement = document.getElementById('schumann-freq');
+            const statusElement = document.getElementById('schumann-status');
+            const textElement = document.getElementById('schumann-text');
+            
+            if (freqElement) {
+                freqElement.textContent = `${currentFreq.toFixed(2)} Hz`;
+            }
+            
+            if (statusElement && textElement) {
+                if (currentFreq < 10) {
+                    statusElement.className = 'status-indicator active';
+                    textElement.textContent = 'Stabilny';
+                } else if (currentFreq < 20) {
+                    statusElement.className = 'status-indicator elevated';
+                    textElement.textContent = 'Podwyższony';
+                } else {
+                    statusElement.className = 'status-indicator high';
+                    textElement.textContent = 'Wysokie Wibracje!';
+                }
+            }
+        }
+
+        // Symulacja odświeżania wiadomości
+        function refreshNews() {
+            // Sprawdź czy użytkownik chce prawdziwe wiadomości
+            if (confirm('Czy chcesz pobrać prawdziwe wiadomości z internetu?\n\n✅ TAK = Prawdziwe wiadomości (wymaga klucza API)\n❌ NIE = Przeładuj stronę')) {
+                refreshRealNews();
+            } else {
+                // Standardowe przeładowanie
+                const refreshBtn = document.querySelector('.refresh-btn');
+                const newsContent = document.getElementById('newsContent');
+                
+                refreshBtn.textContent = '🔄 Odświeżanie...';
+                refreshBtn.style.opacity = '0.7';
+                refreshBtn.disabled = true;
+                
+                newsContent.innerHTML = '<div class="loading">Ładowanie najnowszych wiadomości...</div>';
+                
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+            }
+        }
+
+        // Animacja pojawiania się elementów
+        function animateElements() {
+            const newsItems = document.querySelectorAll('.news-item');
+            newsItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+
+        // Auto-refresh co 10 minut
+        function startAutoRefresh() {
+            setInterval(() => {
+                updateDate();
+            }, 60000); // Aktualizuj co minutę
+
+            // Opcjonalnie: auto-refresh wiadomości co 10 minut
+            // setInterval(refreshNews, 600000);
+        }
+
+        // Uruchom po załadowaniu strony
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDate();
+            animateElements();
+            startAutoRefresh();
+            
+            // Sprawdź czy użytkownik chce automatyczne aktualizacje
+            console.log('📰 Aplikacja Biuletynu Wiadomości uruchomiona!');
+            console.log('💡 Wskazówki:');
+            console.log('1. Kliknij "Odśwież wiadomości" aby pobrać prawdziwe dane');
+            console.log('2. Zarejestruj się na newsapi.org aby otrzymać darmowy klucz API');
+            console.log('3. Zamień YOUR_NEWSAPI_KEY na prawdziwy klucz w kodzie');
+            
+            // Aktualizuj ceny kryptowalut - najpierw spróbuj prawdziwe API
+            fetchRealCryptoPrices().then(success => {
+                if (!success) {
+                    // Jeśli API nie działa, użyj symulacji
+                    updateCryptoPrices();
+                    setInterval(updateCryptoPrices, 10000);
+                } else {
+                    // Jeśli API działa, aktualizuj co 30 sekund
+                    setInterval(fetchRealCryptoPrices, 30000);
+                }
+            });
+            
+            // Aktualizuj Rezonans Schumana co 30 sekund
+            updateSchumannResonance();
+            setInterval(updateSchumannResonance, 30000);
+        });
+
+        // Dodaj efekt parallax dla tła
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            document.body.style.transform = `translateY(${rate}px)`;
+        });
+    </script>
+</body>
+</html>
