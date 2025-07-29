@@ -243,22 +243,9 @@
             <div class="date" id="currentDate"></div>
             <button class="refresh-btn" onclick="refreshNews()">🔄 Odśwież wiadomości</button>
             
-            <!-- Panel konfiguracji API -->
-            <div style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; font-size: 0.9rem;">
-                <details>
-                    <summary style="cursor: pointer; font-weight: bold;">⚙️ Konfiguracja API (kliknij aby rozwinąć)</summary>
-                    <div style="margin-top: 10px; text-align: left;">
-                        <p><strong>🔑 Aby otrzymać prawdziwe wiadomości:</strong></p>
-                        <ol style="text-align: left; margin: 10px 0;">
-                            <li>Zarejestruj się na <a href="https://newsapi.org" target="_blank" style="color: #ffd700;">newsapi.org</a> (darmowe)</li>
-                            <li>Otrzymasz klucz API (np: a1b2c3d4e5f6...)</li>
-                            <li>W kodzie zamień <code>YOUR_NEWSAPI_KEY</code> na swój klucz</li>
-                            <li>Kliknij "Odśwież wiadomości" i wybierz "TAK"</li>
-                        </ol>
-                        <p><strong>💰 Ceny crypto:</strong> Działają automatycznie (CoinGecko API)</p>
-                        <p><strong>🔮 Rezonans Schumana:</strong> Symulowane fluktuacje</p>
-                    </div>
-                </details>
+            <!-- Status API -->
+            <div style="margin-top: 15px; padding: 10px; background: rgba(46, 204, 113, 0.2); border-radius: 10px; font-size: 0.9rem;">
+                <span style="color: #2ecc71;">✅ API skonfigurowane</span> - prawdziwe wiadomości i ceny crypto dostępne!
             </div>
         </div>
 
@@ -802,24 +789,8 @@
 
         // Symulacja odświeżania wiadomości
         function refreshNews() {
-            // Sprawdź czy użytkownik chce prawdziwe wiadomości
-            if (confirm('Czy chcesz pobrać prawdziwe wiadomości z internetu?\n\n✅ TAK = Prawdziwe wiadomości (wymaga klucza API)\n❌ NIE = Przeładuj stronę')) {
-                refreshRealNews();
-            } else {
-                // Standardowe przeładowanie
-                const refreshBtn = document.querySelector('.refresh-btn');
-                const newsContent = document.getElementById('newsContent');
-                
-                refreshBtn.textContent = '🔄 Odświeżanie...';
-                refreshBtn.style.opacity = '0.7';
-                refreshBtn.disabled = true;
-                
-                newsContent.innerHTML = '<div class="loading">Ładowanie najnowszych wiadomości...</div>';
-                
-                setTimeout(() => {
-                    location.reload();
-                }, 2000);
-            }
+            // Automatycznie pobierz prawdziwe wiadomości
+            refreshRealNews();
         }
 
         // Animacja pojawiania się elementów
