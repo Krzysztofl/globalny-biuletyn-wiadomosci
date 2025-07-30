@@ -215,102 +215,8 @@
             margin-left: 10px;
         }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: white;
-            font-size: 1.2rem;
-        }
-
         .icon {
             font-size: 1.5rem;
-        }
-
-        .crypto-prices {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .crypto-prices h3 {
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
-        }
-
-        .price-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .crypto-symbol {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .crypto-price {
-            font-size: 1.2rem;
-            color: #ffd700;
-            margin-bottom: 5px;
-        }
-
-        .crypto-change {
-            font-size: 0.9rem;
-        }
-
-        .positive { color: #2ecc71; }
-        .negative { color: #e74c3c; }
-
-        .schumann-widget {
-            background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            color: white;
-            text-align: center;
-        }
-
-        .schumann-widget h3 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .frequency-display {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffd700;
-            margin: 10px 0;
-        }
-
-        .status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        .active { background-color: #2ecc71; }
-        .elevated { background-color: #f39c12; }
-        .high { background-color: #e74c3c; }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
         }
 
         .update-time {
@@ -354,473 +260,10 @@
                     <div class="news-item" onclick="toggleNewsItem(this)">
                         <div class="expand-indicator"></div>
                         <div class="news-content">
-                            <div class="news-title">Pożary w Turcji - ofiary wśród strażaków</div>
-                            <div class="news-summary">Szalejące pożary w Turcji zabiły co najmniej 10 strażaków i ratowników. Sytuacja pozostaje krytyczna.</div>
-                            <div class="news-source">CNN<span class="article-date">27 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Tragiczne pożary lasów w południowej Turcji pochłonęły życie co najmniej 10 strażaków i pracowników służb ratunkowych. Władze tureckie ogłosiły stan wyjątkowy w trzech prowincjach najbardziej dotkniętych żywiołem.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KRYPTOWALUTY -->
-                <div class="news-section crypto">
-                    <div class="crypto-prices">
-                        <h3>💰 Aktualne Ceny Kryptowalut</h3>
-                        <div class="price-grid">
-                            <div class="price-item">
-                                <div class="crypto-symbol">BTC</div>
-                                <div class="crypto-price" id="btc-price">$107,240</div>
-                                <div class="crypto-change positive">+2.1%</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="crypto-symbol">ETH</div>
-                                <div class="crypto-price" id="eth-price">$3,765</div>
-                                <div class="crypto-change positive">+4.3%</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="crypto-symbol">SOL</div>
-                                <div class="crypto-price" id="sol-price">$218</div>
-                                <div class="crypto-change positive">+6.2%</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="crypto-symbol">BNB</div>
-                                <div class="crypto-price" id="bnb-price">$689</div>
-                                <div class="crypto-change negative">-1.2%</div>
-                            </div>
-                            <div class="price-item">
-                                <div class="crypto-symbol">XRP</div>
-                                <div class="crypto-price" id="xrp-price">$2.41</div>
-                                <div class="crypto-change positive">+5.7%</div>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="section-title">
-                        <span class="icon">₿</span>
-                        Kryptowaluty & Blockchain
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Trump podpisuje pierwszy wielki akt prawny o crypto w USA</div>
-                            <div class="news-summary">Prezydent Trump podpisał ustawę GENIUS Act o stablecoinach, pierwszy znaczący akt prawny dotyczący kryptowalut w historii USA.</div>
-                            <div class="news-source">CNBC<span class="article-date">18 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Prezydent Trump podpisał ustawę GENIUS Act w piątek po południu, czyniąc ją pierwszym znaczącym prawem dotyczącym kryptowalut w historii USA.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Ethereum ETF wyprzedza Bitcoin - rekordowe wpływy</div>
-                            <div class="news-summary">Po raz pierwszy w historii ETF-y Ethereum zanotowały wyższe dzienne wpływy ($602M) niż Bitcoin ETF-y ($522M). Ethereum +43% w dwa tygodnie.</div>
-                            <div class="news-source">CNBC<span class="article-date">18 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                W czwartek ETF-y śledzące cenę Ethereum po raz pierwszy przewyższyły fundusze Bitcoin pod względem dziennych wpływów. Fundusze ETH zanotowały wpływy netto w wysokości $602 milionów.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Twenty One Capital: ponad 43,500 BTC w skarbcu</div>
-                            <div class="news-summary">Wspierany przez Cantor Fitzgerald, Tether i SoftBank, Twenty One Capital posiada już ponad 43,500 BTC, przekraczając wczesne prognozy.</div>
-                            <div class="news-source">Cointelegraph<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Twenty One Capital, wspierany przez znaczących inwestorów takich jak Cantor Fitzgerald, Tether i SoftBank, zgromadził już ponad 43,500 BTC w swoim skarbcu, znacznie przekraczając początkowe prognozy firmy.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Cointelegraph →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DUCHOWOŚĆ -->
-                <div class="news-section spiritual">
-                    <div class="schumann-widget">
-                        <h3>🌍 Rezonans Schumana - Na Żywo</h3>
-                        <div class="frequency-display" id="schumann-freq">7.83 Hz</div>
-                        <div>
-                            <span class="status-indicator active" id="schumann-status"></span>
-                            <span id="schumann-text">Stabilny</span>
-                        </div>
-                        <div style="margin-top: 10px; font-size: 0.9rem;">
-                            Bicie serca Ziemi - ostatnia aktualizacja: <span id="schumann-time">dziś</span>
-                        </div>
-                    </div>
-                    <h2 class="section-title">
-                        <span class="icon">🔮</span>
-                        Duchowość & Rezonans Schumana
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Rezonans Schumana osiąga nowe szczyty częstotliwości</div>
-                            <div class="news-summary">Ziemskie "bicie serca" o podstawowej częstotliwości 7.83 Hz wykazuje anomalie do 40 Hz+, co wielu interpretuje jako oznakę duchowego przebudzenia ludzkości.</div>
-                            <div class="news-source">SchumannResonance.today<span class="article-date">30 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Obserwatorzy Rezonansu Schumana na całym świecie raportują niezwykłe skoki częstotliwości znacznie przekraczające normalną wartość 7.83 Hz.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Sprawdź na żywo na SchumannResonance.today →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Wzrost świadomości kolektywnej - przejście 3D do 5D</div>
-                            <div class="news-summary">Badacze duchowości obserwują, że zwiększona aktywność Rezonansu Schumana koreluje z przebudzeniem świadomości i przejściem do wyższych wymiarów świadomości.</div>
-                            <div class="news-source">Elizabeth Peru - Cosmic Updates<span class="article-date">21 stycznia 2024</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Ekspertka Elizabeth Peru raportuje, że ludzkość przechodzi przez znaczące przesunięcie świadomości z trzeciego do piątego wymiaru (3D do 5D). Proces ten jest wspierany przez zwiększoną aktywność Rezonansu Schumana.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej u Elizabeth Peru →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Fizyczne objawy przesunięć częstotliwości</div>
-                            <div class="news-summary">Zwiększone bóle głowy, problemy ze snem, wysokowibracyjne "ściągnięcia" do uszu i duchowe doświadczenia - objawy adaptacji do wyższych częstotliwości Ziemi.</div>
-                            <div class="news-source">AWAKEN University<span class="article-date">6 marca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                AWAKEN University dokumentuje rosnącą liczbę osób doświadczających fizycznych objawów związanych z przesunięciami częstotliwości Ziemi. Najczęstsze symptomy to: intensywne bóle głowy, zaburzenia snu, uczucie dzwonienia w uszach.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na AWAKEN University →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SPORT POLSKI -->
-                <div class="news-section sports">
-                    <h2 class="section-title">
-                        <span class="icon">⚽</span>
-                        Sport Polski
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Robert Lewandowski kończy karierę reprezentacyjną</div>
-                            <div class="news-summary">Kapitan reprezentacji Polski oficjalnie ogłosił zakończenie kariery w narodowych barwach po 19 latach gry. PZPN szuka nowego lidera drużyny.</div>
-                            <div class="news-source">Dailysports<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Robert Lewandowski w emocjonalnym oświadczeniu pożegnał się z reprezentacją Polski po 19 latach kariery. Kapitan strzelił 84 gole w 151 meczach.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Dailysports →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Iga Świątek broni tytułu w Cincinnati</div>
-                            <div class="news-summary">Najlepsza tenisistka świata rozpoczyna obronę tytułu w Cincinnati Open. Polka jest główną faworytką turnieju przed US Open.</div>
-                            <div class="news-source">Poland 24<span class="article-date">30 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Iga Świątek rozpoczęła obronę tytułu w prestiżowym turnieju Cincinnati Open, który jest ważnym sprawdzianem przed US Open. Polka, będąca bezsprzeczną liderką rankingu WTA, otrzymała status głównej faworytki.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Poland 24 →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Polscy siatkarze przygotowują się do Ligi Narodów</div>
-                            <div class="news-summary">Mistrzowie świata rozpoczynają przygotowania do finałów Ligi Narodów. Trener Grbić testuje nowe ustawienia przed igrzyskami.</div>
-                            <div class="news-source">Przegląd Sportowy<span class="article-date">30 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Reprezentacja Polski w siatkówce mężczyzn rozpoczęła intensywne przygotowania do finałów Ligi Narodów. Trener Nikola Grbić eksperymentuje z nowymi ustawieniami, testując różne kombinacje zawodników.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej w Przeglądzie Sportowym →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Hubert Hurkacz awansuje w rankingu ATP</div>
-                            <div class="news-summary">Polski tenisista wszedł do TOP 10 rankingu ATP po udanych występach w ostatnich turniejach. To najwyższa pozycja w karierze.</div>
-                            <div class="news-source">Eurosport<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Hubert Hurkacz osiągnął życiowy sukces, awansując na 8. miejsce w rankingu ATP po serii udanych występów w turniejach na twardych kortach. Polski tenisista pokonał kilku zawodników z TOP 10.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Eurosport →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="update-time">
-            Ostatnia aktualizacja: <span id="updateTime"></span>
-        </div>
-    </div>
-
-    <script>
-        // API Configuration
-        const NEWS_CONFIG = {
-            newsApiKey: '046ae636027f4bc78368cca2b7fe8c70'
-        };
-
-        function toggleNewsItem(element) {
-            const fullContent = element.querySelector('.news-full-content');
-            const isExpanded = element.classList.contains('expanded');
-            
-            if (isExpanded) {
-                element.classList.remove('expanded');
-                fullContent.classList.remove('expanded');
-            } else {
-                // Zwiń inne otwarte wiadomości
-                const allItems = document.querySelectorAll('.news-item');
-                allItems.forEach(item => {
-                    if (item !== element) {
-                        item.classList.remove('expanded');
-                        item.querySelector('.news-full-content')?.classList.remove('expanded');
-                    }
-                });
-                
-                element.classList.add('expanded');
-                fullContent.classList.add('expanded');
-            }
-        }
-
-        function updateDate() {
-            const now = new Date();
-            const options = { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric', 
-                weekday: 'long',
-                hour: '2-digit',
-                minute: '2-digit'
-            };
-            document.getElementById('currentDate').textContent = now.toLocaleDateString('pl-PL', options);
-            document.getElementById('updateTime').textContent = now.toLocaleTimeString('pl-PL');
-        }
-
-        async function fetchRealCryptoPrices() {
-            try {
-                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true');
-                const data = await response.json();
-                
-                updateCryptoPriceDisplay('btc-price', data.bitcoin?.usd, data.bitcoin?.usd_24h_change);
-                updateCryptoPriceDisplay('eth-price', data.ethereum?.usd, data.ethereum?.usd_24h_change);
-                updateCryptoPriceDisplay('sol-price', data.solana?.usd, data.solana?.usd_24h_change);
-                updateCryptoPriceDisplay('bnb-price', data.binancecoin?.usd, data.binancecoin?.usd_24h_change);
-                updateCryptoPriceDisplay('xrp-price', data.ripple?.usd, data.ripple?.usd_24h_change);
-                
-                return true;
-            } catch (error) {
-                console.error('Błąd pobierania cen crypto:', error);
-                return false;
-            }
-        }
-
-        function updateCryptoPriceDisplay(elementId, price, change) {
-            const priceElement = document.getElementById(elementId);
-            const changeElement = priceElement?.parentElement.querySelector('.crypto-change');
-            
-            if (priceElement && price) {
-                if (elementId === 'xrp-price') {
-                    priceElement.textContent = `${price.toFixed(2)}`;
-                } else if (elementId === 'sol-price') {
-                    priceElement.textContent = `${price.toFixed(0)}`;
-                } else {
-                    priceElement.textContent = `${price.toLocaleString()}`;
-                }
-            }
-            
-            if (changeElement && change !== undefined) {
-                const changeValue = change.toFixed(1);
-                changeElement.textContent = `${changeValue > 0 ? '+' : ''}${changeValue}%`;
-                changeElement.className = `crypto-change ${changeValue > 0 ? 'positive' : 'negative'}`;
-            }
-        }
-
-        function updateSchumannResonance() {
-            const baseFreq = 7.83;
-            const variation = Math.random() * 15;
-            const currentFreq = baseFreq + variation;
-            
-            const freqElement = document.getElementById('schumann-freq');
-            const statusElement = document.getElementById('schumann-status');
-            const textElement = document.getElementById('schumann-text');
-            
-            if (freqElement) {
-                freqElement.textContent = `${currentFreq.toFixed(2)} Hz`;
-            }
-            
-            if (statusElement && textElement) {
-                if (currentFreq < 10) {
-                    statusElement.className = 'status-indicator active';
-                    textElement.textContent = 'Stabilny';
-                } else if (currentFreq < 20) {
-                    statusElement.className = 'status-indicator elevated';
-                    textElement.textContent = 'Podwyższony';
-                } else {
-                    statusElement.className = 'status-indicator high';
-                    textElement.textContent = 'Wysokie Wibracje!';
-                }
-            }
-        }
-
-        function refreshNews() {
-            const refreshBtn = document.querySelector('.refresh-btn');
-            refreshBtn.textContent = '🔄 Odświeżanie...';
-            refreshBtn.disabled = true;
-            
-            setTimeout(() => {
-                location.reload();
-            }, 2000);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            updateDate();
-            
-            fetchRealCryptoPrices().then(success => {
-                if (!success) {
-                    console.log('Używam symulowanych cen crypto');
-                } else {
-                    setInterval(fetchRealCryptoPrices, 30000);
-                }
-            });
-            
-            updateSchumannResonance();
-            setInterval(updateSchumannResonance, 30000);
-            
-            setInterval(updateDate, 60000);
-        });
-    </script>
-</body>
-</html>indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Strategia Bezpieczeństwa Narodowego przyjęta przez rząd</div>
-                            <div class="news-summary">Rząd Donalda Tuska przyjął nową Strategię Bezpieczeństwa Narodowego. MON planuje wykorzystać unijne miliardy na wzmocnienie obronności Polski.</div>
+                            <div class="news-title">Strategia Bezpieczenstwa Narodowego przyjeta przez rzad</div>
+                            <div class="news-summary">Rzad Donalda Tuska przyjal nowa Strategie Bezpieczenstwa Narodowego. MON planuje wykorzystac unijne miliardy na wzmocnienie obronnosci Polski.</div>
                             <div class="news-source">Forsal.pl<span class="article-date">29 lipca 2025</span></div>
                         </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Rada Ministrów przyjęła nową Strategię Bezpieczeństwa Narodowego Rzeczypospolitej Polskiej. Dokument definiuje główne wyzwania i zagrożenia dla bezpieczeństwa kraju oraz określa cele strategiczne na najbliższe lata. Ministerstwo Obrony Narodowej planuje wykorzystać dostępne środki z Unii Europejskiej.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Forsal.pl →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Polskie drogi szybkiego ruchu - 350 km do końca roku</div>
-                            <div class="news-summary">Polska planuje oddać do użytku 350 kilometrów dróg szybkiego ruchu do końca 2025 roku, co znacznie poprawi komunikację w kraju.</div>
-                            <div class="news-source">Rzeczpospolita<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Generalna Dyrekcja Dróg Krajowych i Autostrad planuje oddanie do ruchu rekordowej liczby kilometrów nowych dróg ekspresowych. Inwestycje obejmują dokończenie kluczowych odcinków S7, S19 oraz S61.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na rp.pl →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Notowania rządu Tuska w badaniach CBOS</div>
-                            <div class="news-summary">Dobre notowania rządu wynoszą 32-35%, podczas gdy negatywne oscylują wokół 50-55%, zbliżając się do 60% w najnowszych badaniach.</div>
-                            <div class="news-source">Rzeczpospolita<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Według najnowszego sondażu CBOS, poparcie dla rządu Donalda Tuska systematycznie spada. Szefowa CBOS prof. Ewa Marciniak wskazuje na rosnące niezadowolenie społeczne związane z realizacją obietnic wyborczych.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na rp.pl →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Fałszywe e-maile PGNiG - ostrzeżenie CERT Polska</div>
-                            <div class="news-summary">CERT Polska ostrzega przed nową falą oszustw z wykorzystaniem marki PGNiG. Cyberprzestępcy rozsyłają fałszywe e-maile o zaległych płatnościach.</div>
-                            <div class="news-source">Forsal.pl<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Rządowy zespół CERT Polska wydał pilne ostrzeżenie dotyczące masowej kampanii phishingowej wykorzystującej markę PGNiG. Fałszywe wiadomości e-mail informują o rzekomo zaległych płatnościach i zawierają złośliwe linki.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Forsal.pl →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- USA -->
-                <div class="news-section usa">
-                    <h2 class="section-title">
-                        <span class="icon">🇺🇸</span>
-                        Stany Zjednoczone
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Trump wprowadza nowe cła na stal i aluminium</div>
-                            <div class="news-summary">Prezydent Trump podwoił cła na stal i aluminium z 25% do 50%, argumentując ochroną amerykańskiego przemysłu, mimo ostrzeżeń o wzroście inflacji.</div>
-                            <div class="news-source">PBS News<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Prezydent Trump ogłosił podwojenie ceł na stal i aluminium do 50%, twierdząc że ma to chronić amerykański przemysł. Analitycy ostrzegają, że decyzja ta może prowadzić do wzrostu inflacji i wojny handlowej.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na PBS News →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Gospodarka USA kurczy się o 0,3% w pierwszym kwartale</div>
-                            <div class="news-summary">Departament Handlu podał, że amerykańska gospodarka skurczyła się w pierwszym kwartale z powodu wojen handlowych i niepewności związanej z taryfami.</div>
-                            <div class="news-source">PBS News<span class="article-date">30 kwietnia 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Według najnowszych danych Departamentu Handlu, amerykańska gospodarka skurczyła się o 0,3% w pierwszym kwartale 2025 roku. To pierwszy spadek od 2022 roku, który eksperci przypisują głównie niepewności związanej z polityką handlową Trumpa.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na PBS News →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Trump spotyka się z szefową Komisji Europejskiej</div>
-                            <div class="news-summary">Prezydent Trump ogłosił nową umowę handlową z UE podczas spotkania z Ursulą von der Leyen, obniżając stawki celne na produkty europejskie do 15%.</div>
-                            <div class="news-source">ABC News<span class="article-date">27 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                W niedzielę Trump spotkał się z przewodniczącą Komisji Europejskiej Ursulą von der Leyen w Szkocji, ogłaszając przełomową umowę handlową. Nowe porozumienie obniża cła na produkty europejskie z planowanych 30% do 15%.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na ABC News →</a>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- TECHNOLOGIE -->
                 <div class="news-section tech">
@@ -894,6 +337,202 @@
                     </div>
                 </div>
 
+                <!-- KRYPTOWALUTY -->
+                <div class="news-section crypto">
+                    <div class="crypto-prices" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); border-radius: 15px; padding: 20px; margin-bottom: 20px; color: white;">
+                        <h3 style="margin-bottom: 15px; text-align: center; font-size: 1.2rem;">💰 Aktualne Ceny Kryptowalut</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px;">
+                            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 15px; text-align: center; backdrop-filter: blur(10px);">
+                                <div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">BTC</div>
+                                <div style="font-size: 1.2rem; color: #ffd700; margin-bottom: 5px;">$107,240</div>
+                                <div style="font-size: 0.9rem; color: #2ecc71;">+2.1%</div>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 15px; text-align: center; backdrop-filter: blur(10px);">
+                                <div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">ETH</div>
+                                <div style="font-size: 1.2rem; color: #ffd700; margin-bottom: 5px;">$3,765</div>
+                                <div style="font-size: 0.9rem; color: #2ecc71;">+4.3%</div>
+                            </div>
+                            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 15px; text-align: center; backdrop-filter: blur(10px);">
+                                <div style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">SOL</div>
+                                <div style="font-size: 1.2rem; color: #ffd700; margin-bottom: 5px;">$218</div>
+                                <div style="font-size: 0.9rem; color: #2ecc71;">+6.2%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="icon">₿</span>
+                        Kryptowaluty & Blockchain
+                    </h2>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Trump podpisuje pierwszy wielki akt prawny o crypto w USA</div>
+                            <div class="news-summary">Prezydent Trump podpisał ustawę GENIUS Act o stablecoinach, pierwszy znaczący akt prawny dotyczący kryptowalut w historii USA.</div>
+                            <div class="news-source">CNBC<span class="article-date">18 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Prezydent Trump podpisał ustawę GENIUS Act w piątek po południu, czyniąc ją pierwszym znaczącym prawem dotyczącym kryptowalut w historii USA.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
+                        </div>
+                    </div>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Ethereum ETF wyprzedza Bitcoin - rekordowe wpływy</div>
+                            <div class="news-summary">Po raz pierwszy w historii ETF-y Ethereum zanotowały wyższe dzienne wpływy ($602M) niż Bitcoin ETF-y ($522M). Ethereum +43% w dwa tygodnie.</div>
+                            <div class="news-source">CNBC<span class="article-date">18 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                W czwartek ETF-y śledzące cenę Ethereum po raz pierwszy przewyższyły fundusze Bitcoin pod względem dziennych wpływów. Fundusze ETH zanotowały wpływy netto w wysokości $602 milionów.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DUCHOWOŚĆ -->
+                <div class="news-section spiritual">
+                    <div style="background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%); border-radius: 15px; padding: 20px; margin-bottom: 20px; color: white; text-align: center;">
+                        <h3 style="margin-bottom: 15px; font-size: 1.2rem;">🌍 Rezonans Schumana - Na Żywo</h3>
+                        <div style="font-size: 2rem; font-weight: bold; color: #ffd700; margin: 10px 0;">7.83 Hz</div>
+                        <div>
+                            <span style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; background-color: #2ecc71;"></span>
+                            <span>Stabilny</span>
+                        </div>
+                        <div style="margin-top: 10px; font-size: 0.9rem;">
+                            Bicie serca Ziemi - ostatnia aktualizacja: dziś
+                        </div>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="icon">🔮</span>
+                        Duchowość & Rezonans Schumana
+                    </h2>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Rezonans Schumana osiąga nowe szczyty częstotliwości</div>
+                            <div class="news-summary">Ziemskie "bicie serca" o podstawowej częstotliwości 7.83 Hz wykazuje anomalie do 40 Hz+, co wielu interpretuje jako oznakę duchowego przebudzenia ludzkości.</div>
+                            <div class="news-source">SchumannResonance.today<span class="article-date">30 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Obserwatorzy Rezonansu Schumana na całym świecie raportują niezwykłe skoki częstotliwości znacznie przekraczające normalną wartość 7.83 Hz.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Sprawdź na żywo na SchumannResonance.today →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPORT POLSKI -->
+                <div class="news-section sports">
+                    <h2 class="section-title">
+                        <span class="icon">⚽</span>
+                        Sport Polski
+                    </h2>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Robert Lewandowski kończy karierę reprezentacyjną</div>
+                            <div class="news-summary">Kapitan reprezentacji Polski oficjalnie ogłosił zakończenie kariery w narodowych barwach po 19 latach gry. PZPN szuka nowego lidera drużyny.</div>
+                            <div class="news-source">Dailysports<span class="article-date">29 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Robert Lewandowski w emocjonalnym oświadczeniu pożegnał się z reprezentacją Polski po 19 latach kariery. Kapitan strzelił 84 gole w 151 meczach.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Dailysports →</a>
+                        </div>
+                    </div>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Iga Świątek broni tytułu w Cincinnati</div>
+                            <div class="news-summary">Najlepsza tenisistka świata rozpoczyna obronę tytułu w Cincinnati Open. Polka jest główną faworytką turnieju przed US Open.</div>
+                            <div class="news-source">Poland 24<span class="article-date">30 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Iga Świątek rozpoczęła obronę tytułu w prestiżowym turnieju Cincinnati Open, który jest ważnym sprawdzianem przed US Open. Polka, będąca bezsprzeczną liderką rankingu WTA, otrzymała status głównej faworytki.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Poland 24 →</a>
+                        </div>
+                    </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Rada Ministrow przyjela nowa Strategie Bezpieczenstwa Narodowego Rzeczypospolitej Polskiej. Dokument definiuje glowne wyzwania i zagrozenia dla bezpieczenstwa kraju oraz okresla cele strategiczne na najblizsze lata.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj wiecej na Forsal.pl →</a>
+                        </div>
+                    </div>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Polskie drogi szybkiego ruchu - 350 km do konca roku</div>
+                            <div class="news-summary">Polska planuje oddac do uzytku 350 kilometrow drog szybkiego ruchu do konca 2025 roku, co znacznie poprawi komunikacje w kraju.</div>
+                            <div class="news-source">Rzeczpospolita<span class="article-date">29 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Generalna Dyrekcja Drog Krajowych i Autostrad planuje oddanie do ruchu rekordowej liczby kilometrow nowych drog ekspresowych. Inwestycje obejmuja dokończenie kluczowych odcinkow S7, S19 oraz S61.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj wiecej na rp.pl →</a>
+                        </div>
+                    </div>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Notowania rzadu Tuska w badaniach CBOS</div>
+                            <div class="news-summary">Dobre notowania rzadu wynosza 32-35%, podczas gdy negatywne oscyluja wokol 50-55%, zblizajac sie do 60% w najnowszych badaniach.</div>
+                            <div class="news-source">Rzeczpospolita<span class="article-date">28 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Wedlug najnowszego sondazu CBOS, poparcie dla rzadu Donalda Tuska systematycznie spada. Szefowa CBOS prof. Ewa Marciniak wskazuje na rosnace niezadowolenie spoleczne zwiazane z realizacja obietnic wyborczych.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj wiecej na rp.pl →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- USA -->
+                <div class="news-section usa">
+                    <h2 class="section-title">
+                        <span class="icon">🇺🇸</span>
+                        Stany Zjednoczone
+                    </h2>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Trump wprowadza nowe cła na stal i aluminium</div>
+                            <div class="news-summary">Prezydent Trump podwoił cła na stal i aluminium z 25% do 50%, argumentując ochroną amerykańskiego przemysłu, mimo ostrzeżeń o wzroście inflacji.</div>
+                            <div class="news-source">PBS News<span class="article-date">29 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Prezydent Trump ogłosił podwojenie ceł na stal i aluminium do 50%, twierdząc że ma to chronić amerykański przemysł. Analitycy ostrzegają, że decyzja ta może prowadzić do wzrostu inflacji i wojny handlowej.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na PBS News →</a>
+                        </div>
+                    </div>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Gospodarka USA kurczy się o 0,3% w pierwszym kwartale</div>
+                            <div class="news-summary">Departament Handlu podał, że amerykańska gospodarka skurczyła się w pierwszym kwartale z powodu wojen handlowych i niepewności związanej z taryfami.</div>
+                            <div class="news-source">PBS News<span class="article-date">30 kwietnia 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Według najnowszych danych Departamentu Handlu, amerykańska gospodarka skurczyła się o 0,3% w pierwszym kwartale 2025 roku. To pierwszy spadek od 2022 roku, który eksperci przypisują głównie niepewności związanej z polityką handlową Trumpa.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na PBS News →</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- ŚWIAT -->
                 <div class="news-section world">
                     <h2 class="section-title">
@@ -928,19 +567,66 @@
                             <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
                         </div>
                     </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator"></div>
-                        <div class="news-content">
-                            <div class="news-title">Negocjacje handlowe USA-Chiny w Sztokholmie</div>
-                            <div class="news-summary">Dwudniowe spotkanie negocjatorów handlowych z USA i Chin w Sztokholmie zakończyło się bez jasnej ścieżki uniknięcia wysokich ceł handlowych.</div>
-                            <div class="news-source">CNN<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Negocjatorzy handlowi z USA i Chin zakończyli dwudniowe rozmowy w Sztokholmie bez przełomu, który mógłby zapobiec eskalacji wojny handlowej. Rozmowy koncentrowały się na uniknięciu powrotu do ultra-wysokich ceł.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-
+                </div>
+            </div>
+        </div>
+
+        <div class="update-time">
+            Ostatnia aktualizacja: <span id="updateTime"></span>
+        </div>
+    </div>
+
+    <script>
+        function toggleNewsItem(element) {
+            const fullContent = element.querySelector('.news-full-content');
+            const isExpanded = element.classList.contains('expanded');
+            
+            if (isExpanded) {
+                element.classList.remove('expanded');
+                fullContent.classList.remove('expanded');
+            } else {
+                // Zwiń inne otwarte wiadomości
+                const allItems = document.querySelectorAll('.news-item');
+                allItems.forEach(item => {
+                    if (item !== element) {
+                        item.classList.remove('expanded');
+                        item.querySelector('.news-full-content')?.classList.remove('expanded');
+                    }
+                });
+                
+                element.classList.add('expanded');
+                fullContent.classList.add('expanded');
+            }
+        }
+
+        function updateDate() {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                weekday: 'long',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('pl-PL', options);
+            document.getElementById('updateTime').textContent = now.toLocaleTimeString('pl-PL');
+        }
+
+        function refreshNews() {
+            const refreshBtn = document.querySelector('.refresh-btn');
+            refreshBtn.textContent = '🔄 Odświeżanie...';
+            refreshBtn.disabled = true;
+            
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDate();
+            setInterval(updateDate, 60000);
+        });
+    </script>
+</body>
+</html>
