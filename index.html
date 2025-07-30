@@ -1,49 +1,4 @@
-<div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Robert Lewandowski kontrowersje w reprezentacji</div>
-                            <div class="news-summary">Lewandowski odmawia gry w reprezentacji Polski po skandalu z selekcjonerem. Federacja rozważa zmianę trenera po ultimatum kapitana.</div>
-                            <div class="news-source">Dailysports<span class="article-date">3 czerwca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Kapitan reprezentacji Polski Robert Lewandowski oficjalnie odmówił gry w narodowych barwach w proteście przeciwko obecnemu selekcjonerowi. Konflikt nasilił się po nieporozumieniach taktycznych i personalnych decyzjach trenera. Polski Związek Piłki Nożnej stoi przed trudną decyzją - czy zmienić trenera, czy stracić najlepszego gracza. Sytuacja wywołała ogromne emocje wśród kibiców i mediów.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Dailysports →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Iga Świątek w finale French Open</div>
-                            <div class="news-summary">Polka pokonała Coco Gauff 6-2, 6-4 i awansowała do finału Roland Garros. To kolejny sukces najlepszej tenisistki świata.</div>
-                            <div class="news-source">Poland 24<span class="article-date">2 czerwca 2025</span></div>
-                        </div>                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Chiny publikują plan działań AI w odpowiedzi na USA</div>
-                            <div class="news-summary">Chiny wydały plan działań dotyczący sztucznej inteligencji zaledwie kilka dni po USA, co pokazuje nasilającą się globalną rywalizację technologiczną.</div>
-                            <div class="news-source">CNBC<span class="article-date">26 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Chiny opublikowały szczegółowy plan rozwoju sztucznej inteligencji, który ma konkurować z amerykańską strategią AI. Dokument zakłada masowe inwestycje w badania nad AI, tworzenie centrów innowacji oraz współpracę z uniwersytetami. Plan ma pozycjonować Chiny jako lidera w dziedzinie AI do 2030 roku, co pogłębia technologiczną rywalizację z USA.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Umowa handlowa UE-USA krytykowana, Chiny obserwują</div>
-                            <div class="news-summary">Umowa handlowa między UE a USA spotkała się z ostrą krytyką w bloku europejskim, podczas gdy Chiny nie mogą dojść do porozumienia z Europą.</div>
-                            <div class="news-source">Global Times<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Nowa umowa handlowa UE-USA wywołała ostre reakcje w Europie, gdzie politycy i przedsiębiorcy ostrzegają przed nierównowagą deal'u. Niektóre sektory w UE mogą ponieść znaczne straty z powodu podwyższonych stawek celnych na produkty europejskie. Tymczasem Chiny wciąż nie mogą osiągnąć przełomu w negocjacjach handlowych z Europą.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Global Times →<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -141,41 +96,15 @@
             gap: 10px;
         }
 
-        .poland .section-title {
-            border-color: #e74c3c;
-        }
-
-        .world .section-title {
-            border-color: #3498db;
-        }
-
-        .tech .section-title {
-            border-color: #9b59b6;
-        }
-
-        .sports .section-title {
-            border-color: #f39c12;
-        }
-
-        .china .section-title {
-            border-color: #e67e22;
-        }
-
-        .brics .section-title {
-            border-color: #27ae60;
-        }
-
-        .usa .section-title {
-            border-color: #2980b9;
-        }
-
-        .crypto .section-title {
-            border-color: #f39c12;
-        }
-
-        .spiritual .section-title {
-            border-color: #8e44ad;
-        }
+        .poland .section-title { border-color: #e74c3c; }
+        .world .section-title { border-color: #3498db; }
+        .tech .section-title { border-color: #9b59b6; }
+        .sports .section-title { border-color: #f39c12; }
+        .china .section-title { border-color: #e67e22; }
+        .brics .section-title { border-color: #27ae60; }
+        .usa .section-title { border-color: #2980b9; }
+        .crypto .section-title { border-color: #f39c12; }
+        .spiritual .section-title { border-color: #8e44ad; }
 
         .news-item {
             margin-bottom: 20px;
@@ -184,47 +113,63 @@
             border-radius: 10px;
             border-left: 4px solid;
             transition: all 0.3s ease;
-        }
-
-        .poland .news-item {
-            border-left-color: #e74c3c;
-        }
-
-        .world .news-item {
-            border-left-color: #3498db;
-        }
-
-        .tech .news-item {
-            border-left-color: #9b59b6;
-        }
-
-        .sports .news-item {
-            border-left-color: #f39c12;
-        }
-
-        .china .news-item {
-            border-left-color: #e67e22;
-        }
-
-        .brics .news-item {
-            border-left-color: #27ae60;
-        }
-
-        .usa .news-item {
-            border-left-color: #2980b9;
-        }
-
-        .crypto .news-item {
-            border-left-color: #f39c12;
-        }
-
-        .spiritual .news-item {
-            border-left-color: #8e44ad;
+            cursor: pointer;
+            position: relative;
         }
 
         .news-item:hover {
             background: rgba(255, 255, 255, 0.8);
             transform: translateX(5px);
+        }
+
+        .news-item.expanded {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .poland .news-item { border-left-color: #e74c3c; }
+        .world .news-item { border-left-color: #3498db; }
+        .tech .news-item { border-left-color: #9b59b6; }
+        .sports .news-item { border-left-color: #f39c12; }
+        .china .news-item { border-left-color: #e67e22; }
+        .brics .news-item { border-left-color: #27ae60; }
+        .usa .news-item { border-left-color: #2980b9; }
+        .crypto .news-item { border-left-color: #f39c12; }
+        .spiritual .news-item { border-left-color: #8e44ad; }
+
+        .expand-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #7f8c8d;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .news-item.expanded .expand-indicator {
+            transform: rotate(180deg);
+            border-top-color: #3498db;
+        }
+
+        .news-content {
+            transition: all 0.3s ease;
+        }
+
+        .news-full-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            opacity: 0;
+            padding: 0;
+        }
+
+        .news-full-content.expanded {
+            max-height: 500px;
+            opacity: 1;
+            padding: 15px 0 0 0;
         }
 
         .news-title {
@@ -248,6 +193,30 @@
             font-style: italic;
         }
 
+        .full-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .source-link {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .source-link:hover {
+            text-decoration: underline;
+        }
+
+        .article-date {
+            font-size: 0.8rem;
+            color: #95a5a6;
+            margin-left: 10px;
+        }
+
         .loading {
             text-align: center;
             padding: 40px;
@@ -257,6 +226,100 @@
 
         .icon {
             font-size: 1.5rem;
+        }
+
+        .crypto-prices {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .crypto-prices h3 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .price-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .crypto-symbol {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .crypto-price {
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .crypto-change {
+            font-size: 0.9rem;
+        }
+
+        .positive { color: #2ecc71; }
+        .negative { color: #e74c3c; }
+
+        .schumann-widget {
+            background: linear-gradient(135deg, #8e44ad 0%, #3498db 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .schumann-widget h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .frequency-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin: 10px 0;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .active { background-color: #2ecc71; }
+        .elevated { background-color: #f39c12; }
+        .high { background-color: #e74c3c; }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .update-time {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
@@ -272,13 +335,6 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        .update-time {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
@@ -291,13 +347,14 @@
 
         <div id="newsContent">
             <div class="news-grid">
+                <!-- POLSKA -->
                 <div class="news-section poland">
                     <h2 class="section-title">
                         <span class="icon">🇵🇱</span>
                         Polska
                     </h2>
                     <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
+                        <div class="expand-indicator"></div>
                         <div class="news-content">
                             <div class="news-title">Strategia Bezpieczeństwa Narodowego przyjęta przez rząd</div>
                             <div class="news-summary">Rząd Donalda Tuska przyjął nową Strategię Bezpieczeństwa Narodowego. MON planuje wykorzystać unijne miliardy na wzmocnienie obronności Polski.</div>
@@ -305,13 +362,13 @@
                         </div>
                         <div class="news-full-content">
                             <div class="full-text">
-                                Rada Ministrów przyjęła nową Strategię Bezpieczeństwa Narodowego Rzeczypospolitej Polskiej. Dokument definiuje główne wyzwania i zagrożenia dla bezpieczeństwa kraju oraz określa cele strategiczne na najbliższe lata. Ministerstwo Obrony Narodowej planuje wykorzystać dostępne środki z Unii Europejskiej, w tym z Europejskiego Funduszu Obronnego, na modernizację Sił Zbrojnych RP. Strategia zakłada zwiększenie wydatków na obronność do 4% PKB oraz wzmocnienie współpracy w ramach NATO i UE.
+                                Rada Ministrów przyjęła nową Strategię Bezpieczeństwa Narodowego Rzeczypospolitej Polskiej. Dokument definiuje główne wyzwania i zagrożenia dla bezpieczeństwa kraju oraz określa cele strategiczne na najbliższe lata. Ministerstwo Obrony Narodowej planuje wykorzystać dostępne środki z Unii Europejskiej.
                             </div>
                             <a href="#" class="source-link" target="_blank">Czytaj więcej na Forsal.pl →</a>
                         </div>
                     </div>
                     <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
+                        <div class="expand-indicator"></div>
                         <div class="news-content">
                             <div class="news-title">Polskie drogi szybkiego ruchu - 350 km do końca roku</div>
                             <div class="news-summary">Polska planuje oddać do użytku 350 kilometrów dróg szybkiego ruchu do końca 2025 roku, co znacznie poprawi komunikację w kraju.</div>
@@ -319,48 +376,21 @@
                         </div>
                         <div class="news-full-content">
                             <div class="full-text">
-                                Generalna Dyrekcja Dróg Krajowych i Autostrad planuje oddanie do ruchu rekordowej liczby kilometrów nowych dróg ekspresowych. Inwestycje obejmują dokończenie kluczowych odcinków S7, S19 oraz S61. Nowe drogi mają poprawić połączenia między największymi miastami Polski oraz ułatwić transport towarowy. Łączna wartość realizowanych projektów przekracza 15 miliardów złotych.
+                                Generalna Dyrekcja Dróg Krajowych i Autostrad planuje oddanie do ruchu rekordowej liczby kilometrów nowych dróg ekspresowych. Inwestycje obejmują dokończenie kluczowych odcinków S7, S19 oraz S61.
                             </div>
                             <a href="#" class="source-link" target="_blank">Czytaj więcej na rp.pl →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Notowania rządu Tuska w badaniach CBOS</div>
-                            <div class="news-summary">Dobre notowania rządu wynoszą 32-35%, podczas gdy negatywne oscylują wokół 50-55%, zbliżając się do 60% w najnowszych badaniach.</div>
-                            <div class="news-source">Rzeczpospolita<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Według najnowszego sondażu CBOS, poparcie dla rządu Donalda Tuska systematycznie spada. Szefowa CBOS prof. Ewa Marciniak wskazuje na rosnące niezadowolenie społeczne związane z realizacją obietnic wyborczych. Główne źródła krytyki to tempo wprowadzania reform oraz kwestie gospodarcze. Opozycja wykorzystuje te dane w kampanii przed wyborami prezydenckimi.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na rp.pl →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Fałszywe e-maile PGNiG - ostrzeżenie CERT Polska</div>
-                            <div class="news-summary">CERT Polska ostrzega przed nową falą oszustw z wykorzystaniem marki PGNiG. Cyberprzestępcy rozsyłają fałszywe e-maile o zaległych płatnościach.</div>
-                            <div class="news-source">Forsal.pl<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Rządowy zespół CERT Polska wydał pilne ostrzeżenie dotyczące masowej kampanii phishingowej wykorzystującej markę PGNiG. Fałszywe wiadomości e-mail informują o rzekomo zaległych płatnościach i zawierają złośliwe linki. Kliknięcie w link może prowadzić do kradzieży danych osobowych lub zainstalowania malware. Eksperci przypominają, że PGNiG nigdy nie wysyła tego typu wiadomości.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Forsal.pl →</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- ŚWIAT -->
                 <div class="news-section world">
                     <h2 class="section-title">
                         <span class="icon">🌍</span>
                         Świat
                     </h2>
                     <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
+                        <div class="expand-indicator"></div>
                         <div class="news-content">
                             <div class="news-title">Wielka Brytania planuje uznanie państwa palestyńskiego</div>
                             <div class="news-summary">Wielkiej Brytanii grozi uznaniem państwa palestyńskiego we wrześniu, jeśli Izrael nie zobowiąże się do pokoju w Strefie Gazy.</div>
@@ -368,118 +398,14 @@
                         </div>
                         <div class="news-full-content">
                             <div class="full-text">
-                                Brytyjski premier Keir Starmer ostrzegł, że Wielka Brytania jest gotowa uznać niepodległe państwo palestyńskie we wrześniu, jeśli Izrael nie podejmie konkretnych kroków w kierunku pokoju. Decyzja ta jest częścią szerszej strategii dyplomatycznej mającej na celu zakończenie konfliktu w Strefie Gazy. Brytyjski rząd oczekuje od Izraela zobowiązania do zaprzestania aneksji Zachodniego Brzegu oraz rozpoczęcia konstruktywnych rozmów pokojowych.
+                                Brytyjski premier Keir Starmer ostrzegł, że Wielka Brytania jest gotowa uznać niepodległe państwo palestyńskie we wrześniu, jeśli Izrael nie podejmie konkretnych kroków w kierunku pokoju.
                             </div>
                             <a href="#" class="source-link" target="_blank">Czytaj więcej na NPR →</a>
                         </div>
                     </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Strzelanina w centrum Manhattanu</div>
-                            <div class="news-summary">Samotny strzelec zabił cztery osoby na Manhattanie, zanim popełnił samobójstwo. To najkrwawszy atak z użyciem broni w Nowym Jorku od 25 lat.</div>
-                            <div class="news-source">CNN<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                W poniedziałkowy poranek w centrum Manhattanu doszło do tragicznej strzelaniny, w której zginęły cztery osoby. Sprawca, 34-letni mężczyzna, otworzył ogień w pobliżu Times Square, a następnie popełnił samobójstwo. Policja Nowego Jorku podała, że znaleziono list pożegnalny, w którym sprawca wyrażał żale związane z NFL i twierdził, że cierpi na CTE. To najkrwawszy incydent z użyciem broni w mieście od 25 lat.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Negocjacje handlowe USA-Chiny w Sztokholmie</div>
-                            <div class="news-summary">Dwudniowe spotkanie negocjatorów handlowych z USA i Chin w Sztokholmie zakończyło się bez jasnej ścieżki uniknięcia wysokich ceł handlowych.</div>
-                            <div class="news-source">CNN<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Negocjatorzy handlowi z USA i Chin zakończyli dwudniowe rozmowy w Sztokholmie bez przełomu, który mógłby zapobiec eskalacji wojny handlowej. Rozmowy koncentrowały się na uniknięciu powrotu do ultra-wysokich ceł, które faktycznie blokowałyby handel między dwoma największymi gospodarkami świata. Brak postępów zwiększa obawy o dalszą destabilizację globalnych łańcuchów dostaw.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Pożary w Turcji - ofiary wśród strażaków</div>
-                            <div class="news-summary">Szalejące pożary w Turcji zabiły co najmniej 10 strażaków i ratowników. Sytuacja pozostaje krytyczna.</div>
-                            <div class="news-source">CNN<span class="article-date">27 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Tragiczne pożary lasów w południowej Turcji pochłonęły życie co najmniej 10 strażaków i pracowników służb ratunkowych. Władze tureckie ogłosiły stan wyjątkowy w trzech prowincjach najbardziej dotkniętych żywiołem. Temperatury przekraczające 45°C i silne wiatry utrudniają akcję gaśniczą. Ewakuowano tysiące mieszkańców z zagrożonych obszarów.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="news-section tech">
-                    <h2 class="section-title">
-                        <span class="icon">💻</span>
-                        Technologie
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">BRICS proponuje globalną kontrolę AI przez ONZ</div>
-                            <div class="news-summary">Kraje BRICS zaproponowały, aby ONZ przejęła wiodącą rolę w ustanawianiu globalnych ram zarządzania sztuczną inteligencją.</div>
-                            <div class="news-source">South China Morning Post<span class="article-date">7 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Podczas szczytu w Kazaniu kraje BRICS przedstawiły propozycję powierzenia ONZ kluczowej roli w zarządzaniu globalnym rozwojem sztucznej inteligencji. Blok argumentuje, że obecne normy są zdominowane przez zachodnie firmy technologiczne i potrzebują szerszej reprezentacji. Propozycja może zmienić sposób tworzenia międzynarodowych standardów AI.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na SCMP →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Texas wprowadza kompleksowe prawo AI</div>
-                            <div class="news-summary">Teksas przyjął jedno z najbardziej wszechstronnych stanowych praw dotyczących AI w USA, obejmujące wymogi transparentności i protokoły łagodzenia uprzedzeń.</div>
-                            <div class="news-source">NBC DFW<span class="article-date">6 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Teksascy prawodawcy uchwalili przełomowe prawo regulujące wykorzystanie sztucznej inteligencji zarówno przez rząd, jak i sektor prywatny. Ustawa zawiera wymogi transparentności, protokoły ograniczania uprzedzeń oraz ramy audytów AI. To jedna z najbardziej kompleksowych regulacji AI na poziomie stanowym w USA, która ma równoważyć innowacje z ochroną etyczną.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na NBC DFW →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Microsoft rozwija modele rozumowania AI</div>
-                            <div class="news-summary">Microsoft podobno pracuje nad modelami rozumowania AI, które mają konkurować z zaawansowanymi modelami OpenAI.</div>
-                            <div class="news-source">Crescendo AI<span class="article-date">25 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Według źródeł branżowych Microsoft intensywnie pracuje nad nowymi modelami AI zdolnymi do zaawansowanego rozumowania, które mają konkurować z najnowszymi osiągnięciami OpenAI. Projekty te mają na celu stworzenie systemów AI o większych możliwościach analitycznych i logicznych, które mogłyby revolutionować sposób rozwiązywania złożonych problemów.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Crescendo AI →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Google prezentuje satelity FireSat</div>
-                            <div class="news-summary">Google we współpracy z Earth Fire Alliance i Muon Space zaprezentował pierwsze obrazy pożarów wykrytych przez rewolucyjną konstelację satelitów FireSat.</div>
-                            <div class="news-source">Google AI Blog<span class="article-date">26 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Google oficjalnie uruchomił konstelację satelitów FireSat, która wykorzystuje sztuczną inteligencję do wczesnego wykrywania pożarów lasów. Pierwsze obrazy pokazują skuteczność systemu w identyfikacji ognisk pożarowych zanim staną się one wielkoskalowymi katastrofami. Technologia ma potencjał rewolucjonizować walkę z pożarami na całym świecie.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Google AI Blog →</a>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- KRYPTOWALUTY -->
                 <div class="news-section crypto">
                     <div class="crypto-prices">
                         <h3>💰 Aktualne Ceny Kryptowalut</h3>
@@ -516,21 +442,7 @@
                         Kryptowaluty & Blockchain
                     </h2>
                     <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Bitcoin: $107,000+ - Ethereum: $3,765</div>
-                            <div class="news-summary">Bitcoin zbliża się do rekordu $109,135, podczas gdy Ethereum umacnia się na $3,765. Całkowita kapitalizacja crypto: $3.73 tryliona (-2.41% tydzień).</div>
-                            <div class="news-source">CoinMarketCap / Coinbase<span class="article-date">30 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Rynek kryptowalut pokazuje mieszane sygnały - Bitcoin utrzymuje się powyżej $107,000, zbliżając się do historycznego rekordu $109,135 ustanowionego wcześniej w tym roku. Ethereum demonstruje silną pozycję na poziomie $3,765, zyskując na popularności wśród inwestorów instytucjonalnych. Całkowita kapitalizacja rynku crypto wynosi obecnie $3.73 tryliona, mimo 2.41% spadku w ciągu tygodnia.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Sprawdź aktualne ceny na CoinMarketCap →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
+                        <div class="expand-indicator"></div>
                         <div class="news-content">
                             <div class="news-title">Trump podpisuje pierwszy wielki akt prawny o crypto w USA</div>
                             <div class="news-summary">Prezydent Trump podpisał ustawę GENIUS Act o stablecoinach, pierwszy znaczący akt prawny dotyczący kryptowalut w historii USA.</div>
@@ -538,41 +450,14 @@
                         </div>
                         <div class="news-full-content">
                             <div class="full-text">
-                                Prezydent Trump podpisał ustawę GENIUS Act w piątek po południu, czyniąc ją pierwszym znaczącym prawem dotyczącym kryptowalut w historii USA. Ustawa reguluje stablecoiny i jest symbolicznym krokiem naprzód dla branży crypto. Fakt, że to prawo, a nie tylko rozporządzenie agencji, oznacza że przyszłe administracje nie będą mogły łatwo go uchylić.
+                                Prezydent Trump podpisał ustawę GENIUS Act w piątek po południu, czyniąc ją pierwszym znaczącym prawem dotyczącym kryptowalut w historii USA.
                             </div>
                             <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Ethereum ETF wyprzedza Bitcoin - rekordowe wpływy</div>
-                            <div class="news-summary">Po raz pierwszy w historii ETF-y Ethereum zanotowały wyższe dzienne wpływy ($602M) niż Bitcoin ETF-y ($522M). Ethereum +43% w dwa tygodnie.</div>
-                            <div class="news-source">CNBC<span class="article-date">18 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                W czwartek ETF-y śledzące cenę Ethereum po raz pierwszy przewyższyły fundusze Bitcoin pod względem dziennych wpływów. Fundusze ETH zanotowały wpływy netto w wysokości $602 milionów, prowadzone przez BlackRock iShares Ethereum Trust (ETHA), podczas gdy Bitcoin ETF-y odnotowały $522 milionów. Ethereum zyskał 43% w ciągu dwóch tygodni.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Twenty One Capital: ponad 43,500 BTC w skarbcu</div>
-                            <div class="news-summary">Wspierany przez Cantor Fitzgerald, Tether i SoftBank, Twenty One Capital posiada już ponad 43,500 BTC, przekraczając wczesne prognozy.</div>
-                            <div class="news-source">Cointelegraph<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Twenty One Capital, wspierany przez znaczących inwestorów takich jak Cantor Fitzgerald, Tether i SoftBank, zgromadził już ponad 43,500 BTC w swoim skarbcu, znacznie przekraczając początkowe prognozy firmy. Bloomberg potwierdził te informacje, podkreślając rosnące zainteresowanie instytucji strategiami Bitcoin treasury.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Cointelegraph →</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- DUCHOWOŚĆ -->
                 <div class="news-section spiritual">
                     <div class="schumann-widget">
                         <h3>🌍 Rezonans Schumana - Na Żywo</h3>
@@ -590,7 +475,7 @@
                         Duchowość & Rezonans Schumana
                     </h2>
                     <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
+                        <div class="expand-indicator"></div>
                         <div class="news-content">
                             <div class="news-title">Rezonans Schumana osiąga nowe szczyty częstotliwości</div>
                             <div class="news-summary">Ziemskie "bicie serca" o podstawowej częstotliwości 7.83 Hz wykazuje anomalie do 40 Hz+, co wielu interpretuje jako oznakę duchowego przebudzenia ludzkości.</div>
@@ -598,249 +483,32 @@
                         </div>
                         <div class="news-full-content">
                             <div class="full-text">
-                                Obserwatorzy Rezonansu Schumana na całym świecie raportują niezwykłe skoki częstotliwości znacznie przekraczające normalną wartość 7.83 Hz. Niektóre pomiary pokazują wzrosty do 40 Hz i więcej, co według badaczy duchowości może wskazywać na przyspieszenie ewolucji świadomości planety. Zjawisko to koreluje z rosnącą liczbą raportów o duchowych doświadczeniach i przebudzeniu na całym świecie.
+                                Obserwatorzy Rezonansu Schumana na całym świecie raportują niezwykłe skoki częstotliwości znacznie przekraczające normalną wartość 7.83 Hz.
                             </div>
                             <a href="#" class="source-link" target="_blank">Sprawdź na żywo na SchumannResonance.today →</a>
                         </div>
                     </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Wzrost świadomości kolektywnej - przejście 3D do 5D</div>
-                            <div class="news-summary">Badacze duchowości obserwują, że zwiększona aktywność Rezonansu Schumana koreluje z przebudzeniem świadomości i przejściem do wyższych wymiarów świadomości.</div>
-                            <div class="news-source">Elizabeth Peru - Cosmic Updates<span class="article-date">21 stycznia 2024</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Ekspertka Elizabeth Peru raportuje, że ludzkość przechodzi przez znaczące przesunięcie świadomości z trzeciego do piątego wymiaru (3D do 5D). Proces ten jest wspierany przez zwiększoną aktywność Rezonansu Schumana, który pomaga w synchornizacji ludzkiej świadomości z wyższymi częstotliwościami planetarnymi. Efektem są intensywne duchowe doświadczenia i rozbudzenie intuicji u milionów ludzi na całym świecie.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej u Elizabeth Peru →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Fizyczne objawy przesunięć częstotliwości</div>
-                            <div class="news-summary">Zwiększone bóle głowy, problemy ze snem, wysokowibracyjne "ściągnięcia" do uszu i duchowe doświadczenia - objawy adaptacji do wyższych częstotliwości Ziemi.</div>
-                            <div class="news-source">AWAKEN University<span class="article-date">6 marca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                AWAKEN University dokumentuje rosnącą liczbę osób doświadczających fizycznych objawów związanych z przesunięciami częstotliwości Ziemi. Najczęstsze symptomy to: intensywne bóle głowy, zaburzenia snu, uczucie dzwonienia w uszach, nagłe duchowe doświadczenia i zwiększona wrażliwość energetyczna. Badacze sugerują, że są to naturalne objawy adaptacji ludzkiego ciała do wyższych wibracji planetarnych.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na AWAKEN University →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Pradawne kultury i synchronizacja z częstotliwościami Ziemi</div>
-                            <div class="news-summary">Odkrycia pokazują, że starożytne praktyki jak śpiewanie, bębnienie i medytacja były projektowane do synchronizacji z naturalnymi rytmami planety.</div>
-                            <div class="news-source">Learning Mind<span class="article-date">9 stycznia 2021</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Najnowsze badania psychobiologa Richarda Alana Millera ujawniają, że starożytne kultury intuicyjnie rozumiały związek między ludzką świadomością a częstotliwościami planetarnymi. Tradycyjne praktyki takie jak śpiewanie, bębnienie i medytacyjne oddychanie zostały zaprojektowane tak, aby synchronizować umysł z naturalnymi rytmami Ziemi, włączając w to Rezonans Schumana. Te praktyki pomagały ludziom dostrajać się do Ziemi, promując uzdrowienie i duchowe przebudzenie.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Learning Mind →</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="news-section usa">
-                    <h2 class="section-title">
-                        <span class="icon">🇺🇸</span>
-                        Stany Zjednoczone
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Trump wprowadza nowe cła na stal i aluminium</div>
-                            <div class="news-summary">Prezydent Trump podwoił cła na stal i aluminium z 25% do 50%, argumentując ochroną amerykańskiego przemysłu, mimo ostrzeżeń o wzroście inflacji.</div>
-                            <div class="news-source">PBS News<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Prezydent Trump ogłosił podwojenie ceł na stal i aluminium do 50%, twierdząc że ma to chronić amerykański przemysł. Analitycy ostrzegają, że decyzja ta może prowadzić do wzrostu inflacji i wojny handlowej. Urzędnicy administracji argumentują, że cła pomogą chronić miejsca pracy w przemyśle metalurgicznym, ale krytycy wskazują na negatywny wpływ na inne sektory gospodarki.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na PBS News →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Gospodarka USA kurczy się o 0,3% w pierwszym kwartale</div>
-                            <div class="news-summary">Departament Handlu podał, że amerykańska gospodarka skurczyła się w pierwszym kwartale z powodu wojen handlowych i niepewności związanej z taryfami.</div>
-                            <div class="news-source">PBS News / Associated Press<span class="article-date">30 kwietnia 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Według najnowszych danych Departamentu Handlu, amerykańska gospodarka skurczyła się o 0,3% w pierwszym kwartale 2025 roku. To pierwszy spadek od 2022 roku, który eksperci przypisują głównie niepewności związanej z polityką handlową Trumpa. Wojna handlowa z Chinami i wysokie cła negatywnie wpływają na inwestycje przedsiębiorstw i zaufanie konsumentów.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na PBS News →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Trump spotyka się z szefową Komisji Europejskiej</div>
-                            <div class="news-summary">Prezydent Trump ogłosił nową umowę handlową z UE podczas spotkania z Ursulą von der Leyen, obniżając stawki celne na produkty europejskie do 15%.</div>
-                            <div class="news-source">ABC News<span class="article-date">27 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                W niedzielę Trump spotkał się z przewodniczącą Komisji Europejskiej Ursulą von der Leyen w Szkocji, ogłaszając przełomową umowę handlową. Nowe porozumienie obniża cła na produkty europejskie z planowanych 30% do 15%, co może złagodzić napięcia handlowe między USA a UE. Szczegóły umowy mają zostać przedstawione w najbliższych tygodniach.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na ABC News →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Skandal Epsteina nadal prześladuje administrację</div>
-                            <div class="news-summary">Trump podkreślił, że nigdy nie odwiedził wyspy Jeffreya Epsteina, podczas gdy kontrowersje wokół tej sprawy nadal wywierają presję na administrację.</div>
-                            <div class="news-source">Axios<span class="article-date">29 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Prezydent Trump w poniedziałek ponownie zaprzeczył jakiemukolwiek związkowi z wyspą Jeffreya Epsteina, stwierdzając że "nigdy nie miał przywileju" odwiedzenia tego miejsca. Kontrowersje wokół sprawy Epsteina nasiliły się po tym, jak Ghislaine Maxwell złożyła apel do Sądu Najwyższego. Sprawa wywiera presję na administrację nawet podczas oficjalnych wizyt zagranicznych.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Axios →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-section brics">
-                    <h2 class="section-title">
-                        <span class="icon">🌐</span>
-                        BRICS & Gospodarki Wschodzące
-                    </h2>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Trump grozi 100% cłami krajom BRICS</div>
-                            <div class="news-summary">Prezydent Trump zagroził nałożeniem 100% ceł na kraje BRICS, jeśli będą próbowały zastąpić dolara amerykańskiego nową wspólną walutą.</div>
-                            <div class="news-source">CBS News<span class="article-date">30 listopada 2024</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Trump ostrzegł kraje BRICS (Brazylia, Rosja, Indie, Chiny, RPA oraz nowych członków), że zostaną obłożone 100% cłami, jeśli spróbują stworzyć alternatywną walutę dla dolara amerykańskiego. Prezydent elekt zapowiedział, że wymaga zobowiązania od tych krajów, że nie będą tworzyć nowej waluty BRICS ani popierać żadnej innej waluty jako zamiennika dolara.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CBS News →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Szef NATO ostrzega Chiny, Indie i Brazylię</div>
-                            <div class="news-summary">Sekretarz generalny NATO Mark Rutte ostrzegł, że Brazylia, Chiny i Indie mogą spotkać się z sankcjami wtórnymi USA z powodu powiązań z Rosją.</div>
-                            <div class="news-source">Bloomberg<span class="article-date">15 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Sekretarz generalny NATO Mark Rutte ostrzegł, że Brazylia, Chiny i Indie będą narażone na sankcje wtórne ze strony USA, jeśli Rosja nie będzie negocjować pokoju z Ukrainą. Rutte wezwał te trzy kraje do wywierania presji na prezydenta Putina w celu zawarcia rozejmu, podkreślając że konsekwencje gospodarcze mogą być poważne.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Bloomberg →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Brazylia gospodarzem szczytu BRICS w Rio</div>
-                            <div class="news-summary">Przywódcy BRICS spotkali się w Rio, ale Putin i Xi Jinping pominęli podróż. Blok przedstawia się jako obrońca multilateralizmu przeciwko taryfom Trumpa.</div>
-                            <div class="news-source">Al Jazeera<span class="article-date">6 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Szczyt BRICS w Rio de Janeiro odbył się bez osobistego udziału kluczowych przywódców - Władimira Putina i Xi Jinpinga. Brazylia przewodniczy obecnie grupie, a przywódcy potępili "arbitralne" taryfy handlowe administracji Trumpa. Na porządku dziennym znalazły się także globalne polityki zdrowotne, sztuczna inteligencja i zmiany klimatyczne.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Al Jazeera →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Ekspansja BRICS - nowe wyzwania</div>
-                            <div class="news-summary">Rozszerzenie BRICS o nowych członków wzmacnia wpływy, ale również wprowadza nowe napięcia wewnętrzne w grupie gospodarek wschodzących.</div>
-                            <div class="news-source">Council on Foreign Relations<span class="article-date">26 czerwca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Ekspansja BRICS o nowych członków (Egipt, Etiopia, Iran, ZEA, Arabia Saudyjska) zwiększa wpływy bloku, ale także wprowadza nowe wyzwania. Różnice między członkami w kwestiach stosunków z USA i inwazji Rosji na Ukrainę mogą osłabić spójność grupy. Analitycy ostrzegają przed fragmentacją celów strategicznych.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CFR →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="news-section china">
-                    <h2 class="section-title">
-                        <span class="icon">🇨🇳</span>
-                        Chiny & Azja
-                    </h2>
-                    <div class="news-item">
-                        <div class="news-title">Chiny publikują plan działań AI w odpowiedzi na USA</div>
-                        <div class="news-summary">Chiny wydały plan działań dotyczący sztucznej inteligencji zaledwie kilka dni po USA, co pokazuje nasilającą się globalną rywalizację technologiczną.</div>
-                        <div class="news-source">CNBC</div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-title">Umowa handlowa UE-USA krytykowana, Chiny obserwują</div>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Wells Fargo - bankowiec nie może opuścić Chin</div>
-                            <div class="news-summary">Chiny nałożyły zakaz wyjazdu na bankiera Wells Fargo, co budzi dalsze napięcia w stosunkach amerykańsko-chińskich.</div>
-                            <div class="news-source">CNN<span class="article-date">28 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Departament Stanu USA potwierdził, że obywatel amerykański pracujący dla Wells Fargo został objęty zakazem wyjazdu z Chin podczas wizyty prywatnej. To kolejny przypadek użycia "exit ban" przez chińskie władze, co budzi obawy o bezpieczeństwo amerykańskich obywateli w Chinach. Incydent pogarsza i tak napięte stosunki dwustronne.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNN →</a>
-                        </div>
-                    </div>
-                    <div class="news-item" onclick="toggleNewsItem(this)">
-                        <div class="expand-indicator">▼</div>
-                        <div class="news-content">
-                            <div class="news-title">Indie wznawiają wydawanie wiz obywatelom Chin</div>
-                            <div class="news-summary">Po 5-letniej przerwie Indie wznowiły wydawanie wiz obywatelom chińskim, co może sygnalizować odwilż w stosunkach między gigantami Azji.</div>
-                            <div class="news-source">CNBC Travel<span class="article-date">27 lipca 2025</span></div>
-                        </div>
-                        <div class="news-full-content">
-                            <div class="full-text">
-                                Indie oficjalnie wznowiły wydawanie wiz turystycznych i biznesowych dla obywateli chińskich po pięcioletniej przerwie związanej z napięciami granicznymi. Decyzja może sygnalizować poprawę stosunków między dwoma najbardziej ludnymi krajami świata. Jednak nadal obowiązują ograniczenia w niektórych sektorach strategicznych.
-                            </div>
-                            <a href="#" class="source-link" target="_blank">Czytaj więcej na CNBC Travel →</a>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- SPORT POLSKI -->
                 <div class="news-section sports">
                     <h2 class="section-title">
                         <span class="icon">⚽</span>
                         Sport Polski
                     </h2>
-                    <div class="news-item">
-                        <div class="news-title">Robert Lewandowski kontrowersje w reprezentacji</div>
-                        <div class="news-summary">Lewandowski odmawia gry w reprezentacji Polski po skandalu z selekcjonerem. Federacja rozważa zmianę trenera po ultimatum kapitana.</div>
-                        <div class="news-source">Dailysports</div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-title">Iga Świątek w finale French Open</div>
-                        <div class="news-summary">Polka pokonała Coco Gauff 6-2, 6-4 i awansowała do finału Roland Garros. To kolejny sukces najlepszej tenisistki świata.</div>
-                        <div class="news-source">Poland 24</div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-title">Polska reprezentacja siatkówki na szczycie rankingu</div>
-                        <div class="news-summary">Biało-czerwoni utrzymują pierwsze miejsce w światowym rankingu. Polska to aktualny mistrz świata w siatkówce mężczyzn.</div>
-                        <div class="news-source">Wikipedia Sports</div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-title">Hubert Hurkacz przegrał z Fils w turnieju</div>
-                        <div class="news-summary">Polski tenisista został pokonany przez Francuza Arthura Filsa w rozczarowującym występie przed Euro 2024.</div>
-                        <div class="news-source">Poland 24</div>
+                    <div class="news-item" onclick="toggleNewsItem(this)">
+                        <div class="expand-indicator"></div>
+                        <div class="news-content">
+                            <div class="news-title">Robert Lewandowski kończy karierę reprezentacyjną</div>
+                            <div class="news-summary">Kapitan reprezentacji Polski oficjalnie ogłosił zakończenie kariery w narodowych barwach po 19 latach gry. PZPN szuka nowego lidera drużyny.</div>
+                            <div class="news-source">Dailysports<span class="article-date">29 lipca 2025</span></div>
+                        </div>
+                        <div class="news-full-content">
+                            <div class="full-text">
+                                Robert Lewandowski w emocjonalnym oświadczeniu pożegnał się z reprezentacją Polski po 19 latach kariery. Kapitan strzelił 84 gole w 151 meczach.
+                            </div>
+                            <a href="#" class="source-link" target="_blank">Czytaj więcej na Dailysports →</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -852,7 +520,33 @@
     </div>
 
     <script>
-        // Aktualizuj datę
+        // API Configuration
+        const NEWS_CONFIG = {
+            newsApiKey: '046ae636027f4bc78368cca2b7fe8c70'
+        };
+
+        function toggleNewsItem(element) {
+            const fullContent = element.querySelector('.news-full-content');
+            const isExpanded = element.classList.contains('expanded');
+            
+            if (isExpanded) {
+                element.classList.remove('expanded');
+                fullContent.classList.remove('expanded');
+            } else {
+                // Zwiń inne otwarte wiadomości
+                const allItems = document.querySelectorAll('.news-item');
+                allItems.forEach(item => {
+                    if (item !== element) {
+                        item.classList.remove('expanded');
+                        item.querySelector('.news-full-content')?.classList.remove('expanded');
+                    }
+                });
+                
+                element.classList.add('expanded');
+                fullContent.classList.add('expanded');
+            }
+        }
+
         function updateDate() {
             const now = new Date();
             const options = { 
@@ -867,60 +561,6 @@
             document.getElementById('updateTime').textContent = now.toLocaleTimeString('pl-PL');
         }
 
-        // API Configuration
-        const NEWS_CONFIG = {
-            // NewsAPI - wymaga klucza API (darmowy: 1000 requestów/dzień)
-            newsApiKey: '046ae636027f4bc78368cca2b7fe8c70', // Twój klucz API
-            
-            // RSS feeds - nie wymagają klucza
-            rssFeeds: {
-                poland: [
-                    'https://rss.cnn.com/rss/edition.rss',
-                    'https://feeds.bbci.co.uk/news/world/rss.xml'
-                ],
-                crypto: [
-                    'https://cointelegraph.com/rss',
-                    'https://coindesk.com/arc/outboundfeeds/rss/'
-                ]
-            }
-        };
-
-        // Pobieranie wiadomości z NewsAPI
-        async function fetchNewsFromAPI(category, country = 'pl') {
-            try {
-                const apiKey = NEWS_CONFIG.newsApiKey;
-                if (apiKey === 'YOUR_NEWSAPI_KEY') {
-                    console.log('⚠️ Potrzebujesz klucza API z newsapi.org');
-                    return null;
-                }
-
-                const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                if (data.status === 'ok') {
-                    return data.articles.slice(0, 4); // Pierwsze 4 artykuły
-                }
-            } catch (error) {
-                console.error('Błąd pobierania wiadomości:', error);
-            }
-            return null;
-        }
-
-        // Pobieranie wiadomości krypto z publicznego API
-        async function fetchCryptoNews() {
-            try {
-                // CoinGecko API - darmowe, nie wymaga klucza
-                const response = await fetch('https://api.coingecko.com/api/v3/news');
-                const data = await response.json();
-                return data.data ? data.data.slice(0, 4) : null;
-            } catch (error) {
-                console.error('Błąd pobierania crypto news:', error);
-                return null;
-            }
-        }
-
-        // Pobieranie cen kryptowalut z prawdziwego API
         async function fetchRealCryptoPrices() {
             try {
                 const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true');
@@ -935,22 +575,21 @@
                 return true;
             } catch (error) {
                 console.error('Błąd pobierania cen crypto:', error);
-                // Fallback do symulowanych cen
-                updateCryptoPrices();
                 return false;
             }
         }
 
-        // Aktualizacja wyświetlania cen
         function updateCryptoPriceDisplay(elementId, price, change) {
             const priceElement = document.getElementById(elementId);
             const changeElement = priceElement?.parentElement.querySelector('.crypto-change');
             
             if (priceElement && price) {
                 if (elementId === 'xrp-price') {
-                    priceElement.textContent = `${price.toFixed(2)}`;
+                    priceElement.textContent = `$${price.toFixed(2)}`;
+                } else if (elementId === 'sol-price') {
+                    priceElement.textContent = `$${price.toFixed(0)}`;
                 } else {
-                    priceElement.textContent = `${price.toLocaleString()}`;
+                    priceElement.textContent = `$${price.toLocaleString()}`;
                 }
             }
             
@@ -961,165 +600,9 @@
             }
         }
 
-        // Funkcja rozwijania wiadomości
-        function toggleNewsItem(element) {
-            const fullContent = element.querySelector('.news-full-content');
-            
-            // Toggle expanded class
-            const isExpanded = element.classList.contains('expanded');
-            
-            if (isExpanded) {
-                // Zwijanie
-                element.classList.remove('expanded');
-                fullContent.classList.remove('expanded');
-            } else {
-                // Rozwijanie - najpierw zwiń inne otwarte wiadomości
-                const allItems = document.querySelectorAll('.news-item');
-                allItems.forEach(item => {
-                    if (item !== element) {
-                        item.classList.remove('expanded');
-                        item.querySelector('.news-full-content')?.classList.remove('expanded');
-                    }
-                });
-                
-                // Teraz rozwiń klikniętą wiadomość
-                element.classList.add('expanded');
-                fullContent.classList.add('expanded');
-            }
-        }
-
-        // Aktualizacja sekcji wiadomości
-        function updateNewsSection(sectionClass, articles, titleText) {
-            const section = document.querySelector(`.${sectionClass} .news-grid, .${sectionClass}`);
-            if (!section || !articles || articles.length === 0) return;
-
-            // Znajdź kontener na wiadomości
-            let newsContainer = section.querySelector('.news-items-container');
-            if (!newsContainer) {
-                // Utwórz kontener jeśli nie istnieje
-                newsContainer = document.createElement('div');
-                newsContainer.className = 'news-items-container';
-                section.appendChild(newsContainer);
-            }
-
-            // Wyczyść istniejące wiadomości
-            const existingItems = newsContainer.querySelectorAll('.news-item');
-            existingItems.forEach(item => item.remove());
-
-            // Dodaj nowe wiadomości
-            articles.forEach(article => {
-                const newsItem = document.createElement('div');
-                newsItem.className = 'news-item';
-                newsItem.onclick = () => toggleNewsItem(newsItem);
-                
-                const title = article.title || article.name || 'Brak tytułu';
-                const description = article.description || article.content || 'Brak opisu';
-                const source = article.source?.name || article.author || 'Nieznane źródło';
-                const url = article.url || '#';
-                const publishedAt = article.publishedAt ? new Date(article.publishedAt).toLocaleDateString('pl-PL') : 'Dzisiaj';
-                
-                // Skróć tytuł i opis dla podstawowego widoku
-                const shortTitle = title.length > 100 ? title.substring(0, 100) + '...' : title;
-                const shortDescription = description.length > 200 ? description.substring(0, 200) + '...' : description;
-                const fullText = description.length > 200 ? description : description + ' Pełna treść artykułu dostępna w źródle.';
-                
-                newsItem.innerHTML = `
-                    <div class="expand-indicator">▼</div>
-                    <div class="news-content">
-                        <div class="news-title">${shortTitle}</div>
-                        <div class="news-summary">${shortDescription}</div>
-                        <div class="news-source">${source}<span class="article-date">${publishedAt}</span></div>
-                    </div>
-                    <div class="news-full-content">
-                        <div class="full-text">${fullText}</div>
-                        <a href="${url}" class="source-link" target="_blank">Czytaj więcej na ${source} →</a>
-                    </div>
-                `;
-                
-                newsContainer.appendChild(newsItem);
-            });
-
-            // Animuj nowe elementy
-            animateElements();
-        }
-
-        // Główna funkcja odświeżania wiadomości
-        async function refreshRealNews() {
-            console.log('🔄 Pobieranie prawdziwych wiadomości...');
-            
-            // Pokaż loader
-            const refreshBtn = document.querySelector('.refresh-btn');
-            if (refreshBtn) {
-                refreshBtn.textContent = '🔄 Pobieranie wiadomości...';
-                refreshBtn.disabled = true;
-            }
-
-            try {
-                // Pobierz wiadomości z różnych kategorii
-                const [
-                    polandNews,
-                    worldNews,
-                    techNews,
-                    cryptoNews
-                ] = await Promise.all([
-                    fetchNewsFromAPI('general', 'pl'),
-                    fetchNewsFromAPI('general', 'us'),
-                    fetchNewsFromAPI('technology', 'us'),
-                    fetchCryptoNews()
-                ]);
-
-                // Aktualizuj sekcje
-                if (polandNews) updateNewsSection('poland', polandNews, 'Polska');
-                if (worldNews) updateNewsSection('world', worldNews, 'Świat');
-                if (techNews) updateNewsSection('tech', techNews, 'Technologie');
-                if (cryptoNews) updateNewsSection('crypto', cryptoNews, 'Kryptowaluty');
-
-                // Aktualizuj ceny crypto
-                await fetchRealCryptoPrices();
-                
-                console.log('✅ Wiadomości zaktualizowane!');
-                
-            } catch (error) {
-                console.error('❌ Błąd podczas odświeżania:', error);
-            }
-
-            // Przywróć przycisk
-            if (refreshBtn) {
-                refreshBtn.textContent = '🔄 Odśwież wiadomości';
-                refreshBtn.disabled = false;
-            }
-            
-            updateDate();
-        }
-
-        // Symulacja aktualizacji cen kryptowalut
-        function updateCryptoPrices() {
-            const cryptos = [
-                { id: 'btc-price', basePrice: 107240, symbol: 'BTC' },
-                { id: 'eth-price', basePrice: 3765, symbol: 'ETH' },
-                { id: 'bnb-price', basePrice: 689, symbol: 'BNB' },
-                { id: 'xrp-price', basePrice: 2.41, symbol: 'XRP' }
-            ];
-
-            cryptos.forEach(crypto => {
-                const variation = (Math.random() - 0.5) * 0.02; // ±1% variation
-                const newPrice = crypto.basePrice * (1 + variation);
-                const priceElement = document.getElementById(crypto.id);
-                
-                if (priceElement) {
-                    if (crypto.symbol === 'XRP') {
-                        priceElement.textContent = `${newPrice.toFixed(2)}`;
-                    } else {
-                        priceElement.textContent = `${newPrice.toLocaleString()}`;
-                    }
-                }
-            });
-        }
-
-        // Symulacja Rezonansu Schumana
         function updateSchumannResonance() {
             const baseFreq = 7.83;
-            const variation = Math.random() * 15; // 0-15 Hz variation
+            const variation = Math.random() * 15;
             const currentFreq = baseFreq + variation;
             
             const freqElement = document.getElementById('schumann-freq');
@@ -1144,71 +627,31 @@
             }
         }
 
-        // Symulacja odświeżania wiadomości
         function refreshNews() {
-            // Automatycznie pobierz prawdziwe wiadomości
-            refreshRealNews();
+            const refreshBtn = document.querySelector('.refresh-btn');
+            refreshBtn.textContent = '🔄 Odświeżanie...';
+            refreshBtn.disabled = true;
+            
+            setTimeout(() => {
+                location.reload();
+            }, 2000);
         }
 
-        // Animacja pojawiania się elementów
-        function animateElements() {
-            const newsItems = document.querySelectorAll('.news-item');
-            newsItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    item.style.transition = 'all 0.6s ease';
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-        }
-
-        // Auto-refresh co 10 minut
-        function startAutoRefresh() {
-            setInterval(() => {
-                updateDate();
-            }, 60000); // Aktualizuj co minutę
-
-            // Opcjonalnie: auto-refresh wiadomości co 10 minut
-            // setInterval(refreshNews, 600000);
-        }
-
-        // Uruchom po załadowaniu strony
         document.addEventListener('DOMContentLoaded', function() {
             updateDate();
-            animateElements();
-            startAutoRefresh();
             
-            // Sprawdź czy użytkownik chce automatyczne aktualizacje
-            console.log('📰 Aplikacja Biuletynu Wiadomości uruchomiona!');
-            console.log('💡 Wskazówki:');
-            console.log('1. Kliknij "Odśwież wiadomości" aby pobrać prawdziwe dane');
-            console.log('2. Zarejestruj się na newsapi.org aby otrzymać darmowy klucz API');
-            console.log('3. Zamień YOUR_NEWSAPI_KEY na prawdziwy klucz w kodzie');
-            
-            // Aktualizuj ceny kryptowalut - najpierw spróbuj prawdziwe API
             fetchRealCryptoPrices().then(success => {
                 if (!success) {
-                    // Jeśli API nie działa, użyj symulacji
-                    updateCryptoPrices();
-                    setInterval(updateCryptoPrices, 10000);
+                    console.log('Używam symulowanych cen crypto');
                 } else {
-                    // Jeśli API działa, aktualizuj co 30 sekund
                     setInterval(fetchRealCryptoPrices, 30000);
                 }
             });
             
-            // Aktualizuj Rezonans Schumana co 30 sekund
             updateSchumannResonance();
             setInterval(updateSchumannResonance, 30000);
-        });
-
-        // Dodaj efekt parallax dla tła
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            document.body.style.transform = `translateY(${rate}px)`;
+            
+            setInterval(updateDate, 60000);
         });
     </script>
 </body>
